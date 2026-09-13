@@ -1,5 +1,10 @@
+# ============================================================
 # ساخت و انتشار خودکار سایت روی GitHub Pages
-# کافی است هر بار فایل‌ها را در گیت‌هاب تغییر بدهی؛ این فایل خودش سایت را می‌سازد و منتشر می‌کند.
+# کافی است فایل‌های سایت را تغییر بدهی و در شاخه main بگذاری؛
+# این فایل خودش سایت را می‌سازد و منتشر می‌کند.
+# نیازی نیست هیچ‌وقت دستی کاری انجام بدهی.
+# ============================================================
+
 name: Deploy to GitHub Pages
 
 on:
@@ -21,12 +26,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: دریافت فایل‌های مخزن
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: نصب Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - name: نصب وابستگی‌ها
@@ -36,10 +41,10 @@ jobs:
         run: npm run build
 
       - name: آماده‌سازی برای انتشار
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: بارگذاری فایل‌های ساخته‌شده
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
@@ -52,4 +57,4 @@ jobs:
     steps:
       - name: انتشار روی GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
