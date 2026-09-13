@@ -1,0 +1,61 @@
+/* ============================================================
+   بخش پادکست — عرض تصویر ۴۴۸ (ترکیب دسکتاپ طبق دیزاین)
+   ============================================================ */
+
+.podcast__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--podcast-cover-width);
+  align-items: center;
+  gap: var(--about-text-media-gap);
+}
+
+.podcast__copy {
+  max-width: 460px;
+}
+
+.podcast__title {
+  font-size: var(--fs-card-title);
+  line-height: var(--lh-card-title);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--tracking-title);
+}
+
+.podcast__role {
+  margin-block-start: var(--film-title-subtitle-gap);
+  font-size: var(--fs-body-large);
+  line-height: var(--lh-body-large);
+  opacity: 0.85;
+}
+
+.podcast__links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin-block-start: var(--space-lg);
+}
+
+.podcast__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  transition: opacity var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.podcast__link:hover {
+  opacity: 0.7;
+}
+
+.podcast__link-icon {
+  width: 24px;
+  height: 24px;
+  flex: none;
+}
+
+.podcast__media {
+  width: var(--podcast-cover-width);
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+}

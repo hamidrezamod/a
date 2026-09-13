@@ -1,0 +1,99 @@
+/* ============================================================
+   بخش نوشته‌ها
+   تصویر ۶۷۰×۳۵۵.۷۷ — فاصله کارت‌ها ۲۰۰ — فاصله متن و تصویر ۳۲ —
+   فاصله عنوان کارت تا زیرنویس ۱۶
+   ============================================================ */
+
+.writings__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--writing-card-gap);
+}
+
+.writing-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--writing-image-width) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--about-text-media-gap);
+}
+
+.writing-card--media-right {
+  grid-template-columns: minmax(0, 1fr) var(--writing-image-width);
+}
+
+.writing-card--media-right .writing-card__media {
+  order: 2;
+}
+
+.writing-card--media-right .writing-card__body {
+  order: 1;
+}
+
+.writing-card__media {
+  width: var(--writing-image-width);
+  max-width: 100%;
+  aspect-ratio: 670 / 355.77;
+}
+
+.writing-card__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 380px;
+}
+
+.writing-card--media-right .writing-card__body {
+  justify-self: end;
+  text-align: right;
+}
+
+.writing-card__title {
+  font-size: var(--fs-card-title);
+  line-height: var(--lh-card-title);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--tracking-title);
+}
+
+/* لینک اصلی کارت: کل کارت را کلیک‌پذیر می‌کند بدون اینکه چیدمان به‌هم بخورد */
+.writing-card__trigger {
+  display: inline-block;
+}
+
+.writing-card__trigger::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.writing-card__link {
+  display: block;
+  margin-block-start: var(--writing-title-link-gap);
+  font-size: var(--fs-link);
+  line-height: var(--lh-link);
+  font-weight: var(--fw-medium);
+}
+
+.writing-card__link-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.1em;
+}
+
+/* ---------- هاور ظریف: تصویر کمی بزرگ‌تر و پررنگ‌تر، متن کمی بزرگ‌تر ---------- */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .writing-card__body {
+    transition: transform var(--motion-duration-base) var(--motion-ease-out);
+    transform-origin: left center;
+    will-change: transform;
+  }
+
+  .writing-card--media-right .writing-card__body {
+    transform-origin: right center;
+  }
+
+  .writing-card:hover .writing-card__body,
+  .writing-card:focus-within .writing-card__body {
+    transform: scale(var(--hover-text-scale));
+  }
+}

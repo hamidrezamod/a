@@ -1,0 +1,50 @@
+/* ============================================================
+   منوی اصلی سایت
+   نکته: موقعیت دقیق منو با دریافت دیزاین نهایی تنظیم می‌شود.
+   ============================================================ */
+
+.site-header {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: var(--z-header);
+  padding-block: var(--space-md);
+  pointer-events: none;
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  pointer-events: auto;
+}
+
+.site-header__brand {
+  font-size: var(--fs-small);
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.site-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-md-sm);
+}
+
+.site-nav__link {
+  display: inline-block;
+  font-size: var(--fs-small);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  opacity: 0.72;
+  transition: opacity var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.site-nav__link:hover,
+.site-nav__link:focus-visible {
+  opacity: 1;
+}

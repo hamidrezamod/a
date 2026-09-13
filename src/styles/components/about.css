@@ -1,0 +1,26 @@
+/* ============================================================
+   بخش درباره من
+   تصویر ۵۳۷.۷۴×۶۲۹.۲۶ — فاصله عنوان تا متن ۱۶۰، فاصله پاراگراف‌ها ۱۶،
+   فاصله متن تا تصویر ۳۲
+   ============================================================ */
+
+.about__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--about-image-width);
+  align-items: start;
+  gap: var(--about-text-media-gap);
+}
+
+.about__copy {
+  max-width: 560px;
+}
+
+.about__paragraph + .about__paragraph {
+  margin-block-start: var(--about-paragraph-gap);
+}
+
+.about__media {
+  width: var(--about-image-width);
+  max-width: 100%;
+  aspect-ratio: 537.74 / 629.26;
+}

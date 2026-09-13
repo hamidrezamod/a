@@ -1,0 +1,100 @@
+/* ============================================================
+   قاب تصویر مشترک (MediaFrame)
+   نسبت تصویر از روی اندازه واقعی فایل تنظیم می‌شود تا پرش چیدمان نداشته باشیم.
+   ============================================================ */
+
+.media {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: var(--media-ratio, 1);
+  overflow: hidden;
+  background-color: var(--color-placeholder);
+}
+
+.media--dark {
+  background-color: var(--color-placeholder-dark);
+}
+
+.media__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* اگر فایل تصویر پیدا نشد، قاب خالی و بی‌آزار نمایش داده می‌شود */
+.media__missing {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: var(--space-sm);
+  color: var(--color-ink);
+  font-size: var(--fs-small);
+  text-align: center;
+  opacity: 0.5;
+}
+
+/* ---------- حالت هاور ظریف تصویر در کارت‌ها ---------- */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .media--interactive .media__image {
+    transition:
+      transform var(--motion-duration-base) var(--motion-ease-out),
+      filter var(--motion-duration-base) var(--motion-ease-out);
+    will-change: transform;
+  }
+
+  .media--interactive:hover .media__image,
+  .card:hover .media--interactive .media__image,
+  .card:focus-within .media--interactive .media__image {
+    transform: scale(var(--hover-image-scale));
+    filter: saturate(var(--hover-image-saturate));
+  }
+}
+
+/* ---------- ویدیوی ویمیو ---------- */
+.vimeo-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--media-ratio, 16 / 9);
+  overflow: hidden;
+  background-color: var(--color-placeholder-dark);
+}
+
+.vimeo-embed__poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vimeo-embed__frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.vimeo-embed__play {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--color-text-inverse);
+  background-color: rgba(65, 63, 62, 0.18);
+  transition: background-color var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.vimeo-embed__play:hover {
+  background-color: rgba(65, 63, 62, 0.3);
+}
+
+.vimeo-embed__play-icon {
+  width: 72px;
+  height: 72px;
+}

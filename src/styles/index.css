@@ -1,0 +1,20 @@
+/* ترتیب بارگذاری استایل‌ها — این فایل تنها ورودی استایل‌ها است */
+@import './tokens.css';
+@import './typography.css';
+@import './base.css';
+@import './layout.css';
+
+@import './components/header.css';
+@import './components/hero.css';
+@import './components/about.css';
+@import './components/media.css';
+@import './components/writings.css';
+@import './components/short-film.css';
+@import './components/theatre.css';
+@import './components/podcast.css';
+@import './components/resume.css';
+@import './components/awards.css';
+@import './components/contact.css';
+@import './components/footer.css';
+@import './components/overlay.css';
+@import './components/prose.css';

@@ -1,0 +1,19 @@
+/* ============================================================
+   بخش افتخارات و گواهی‌نامه‌ها
+   عرض هر تصویر ۳۳۰.۶۷ — سه ستون با فاصله ۶۴ (جمعاً ۱۱۲۰)
+   ============================================================ */
+
+.awards__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--award-gap);
+}
+
+.award-card {
+  width: 100%;
+}
+
+.award-card__media {
+  width: var(--award-image-width);
+  max-width: 100%;
+}

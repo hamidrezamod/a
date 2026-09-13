@@ -1,0 +1,82 @@
+/* ============================================================
+   بخش رزومه
+   فاصله عنوان هر دسته تا محتوا ۳۲ — فاصله آیتم‌ها ۱۶ —
+   فاصله دسته‌های اصلی ۶۴ — فاصله برچسب دانشگاه از متن بالا ۸ —
+   فاصله آیکون‌ها ۱۶ — فاصله گروه‌های آیکون ۳۲
+   ============================================================ */
+
+.resume__categories {
+  display: flex;
+  flex-direction: column;
+  gap: var(--resume-category-gap);
+}
+
+.resume-category__title {
+  margin-block-end: var(--resume-category-title-gap);
+  font-size: var(--fs-card-title);
+  line-height: var(--lh-card-title);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--tracking-title);
+}
+
+.resume-category__items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--resume-item-gap);
+}
+
+.resume-item__text {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+.resume-item__label {
+  margin-block-start: var(--resume-label-gap);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  opacity: 0.72;
+}
+
+/* ---------- مهارت‌های نرم‌افزاری ---------- */
+.resume-groups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--resume-group-gap);
+}
+
+.resume-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  min-width: 180px;
+}
+
+.resume-group__title {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+.resume-group__icons {
+  display: flex;
+  align-items: center;
+  gap: var(--resume-icon-gap);
+}
+
+.resume-group__icon {
+  width: 26px;
+  height: 26px;
+  color: var(--color-ink);
+}
+
+/* اگر آیکون SVG نبود، برچسب متنی جانشین می‌شود */
+.resume-group__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 26px;
+  padding-inline: 6px;
+  border: 1px solid var(--color-line-soft);
+  font-size: var(--fs-small);
+  line-height: 1;
+}
