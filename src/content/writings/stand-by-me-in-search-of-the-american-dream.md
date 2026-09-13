@@ -5,7 +5,7 @@ date: 2024
 lang: fa
 cover: writing02
 coverAlt: Stand by Me — In Search of the American Dream
-mediaSide: right
+mediaSide: left
 order: 2
 ---
 

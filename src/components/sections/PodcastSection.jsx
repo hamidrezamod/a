@@ -14,7 +14,7 @@ export function PodcastSection() {
       aria-labelledby="podcast-title"
     >
       <div className="page-shell">
-        <SectionHeading id="podcast-title" className="section__title--light">
+        <SectionHeading id="podcast-title" align="right" className="section__title--light">
           {podcastSection.title}
         </SectionHeading>
 

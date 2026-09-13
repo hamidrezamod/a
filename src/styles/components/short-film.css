@@ -1,75 +1,79 @@
 /* ============================================================
    بخش فیلم کوتاه
    پدینگ بالا و پایین ۷۲ — فاصله عنوان تا محتوا ۱۶۰ —
-   عنوان تا سال ۸، عنوان تا زیرعنوان ۸، زیرعنوان تا «Watch on» ۶۴،
-   فاصله آیکون‌ها ۱۶، فاصله متن تا ویدیو ۳۲،
-   ابعاد پلیر ۶۷۷×۳۸۰.۸۱ (سمت راست)
+   عنوان تا سال ۸، عنوان تا زیرنویس ۸،
+   فاصله متن تا ویدیو ۳۲، ابعاد پلیر ۶۷۷×۳۸۰.۸۱ (سمت راست)،
+   آیکون‌های ویمیو و گوگل‌درایو زیر پلیر با فاصله ۱۶
    ============================================================ */
 
 .short-film__grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) var(--film-video-width);
   align-items: center;
-  gap: var(--about-text-media-gap);
+  gap: var(--column-gap-wide);
 }
 
 .short-film__copy {
   max-width: 420px;
 }
 
+/* بخش پلیر در سمت راست: قاب ویدیو + ردیف آیکون‌ها */
+.short-film__player {
+  display: flex;
+  flex-direction: column;
+  width: var(--film-video-width);
+  max-width: 100%;
+}
+
+.short-film__video {
+  width: 100%;
+}
+
 .short-film__title {
   font-size: var(--fs-card-title);
   line-height: var(--lh-card-title);
-  font-weight: var(--fw-medium);
+  font-weight: var(--fw-card-title);
   letter-spacing: var(--tracking-title);
 }
 
 .short-film__year {
   margin-block-start: var(--film-title-year-gap);
-  font-size: var(--fs-body-large);
-  line-height: var(--lh-body-large);
-  font-weight: var(--fw-regular);
+  font-size: var(--fs-card-subtitle);
+  line-height: var(--lh-card-subtitle);
+  font-weight: var(--fw-card-subtitle);
 }
 
 .short-film__role {
   margin-block-start: var(--film-title-subtitle-gap);
-  font-size: var(--fs-body-large);
-  line-height: var(--lh-body-large);
-  font-weight: var(--fw-regular);
-  opacity: 0.85;
+  font-size: var(--fs-card-subtitle);
+  line-height: var(--lh-card-subtitle);
+  font-weight: var(--fw-card-subtitle);
+  opacity: 0.9;
 }
 
 .short-film__platforms {
   display: flex;
   align-items: center;
   gap: var(--platform-icon-gap);
-  margin-block-start: var(--film-subtitle-platform-gap);
-}
-
-.short-film__platform-label {
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
+  margin-block-start: var(--space-md);
 }
 
 .short-film__platform {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 26px;
+  height: 26px;
   color: var(--color-text-inverse);
   transition: opacity var(--motion-duration-fast) var(--motion-ease-out);
 }
 
 .short-film__platform:hover,
 .short-film__platform:focus-visible {
-  opacity: 0.7;
+  opacity: 0.65;
 }
 
 .short-film__platform-icon {
-  width: 24px;
-  height: 24px;
-}
-
-.short-film__video {
-  width: var(--film-video-width);
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
 }

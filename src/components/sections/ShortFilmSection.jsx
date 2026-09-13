@@ -3,9 +3,16 @@ import { VimeoEmbed } from '../media/VimeoEmbed.jsx';
 import { Icon } from '../ui/Icon.jsx';
 import { SectionHeading } from '../ui/SectionHeading.jsx';
 
-/** بخش فیلم کوتاه — نوار تیره با پلیر ویمیو در سمت راست */
+/**
+ * بخش فیلم کوتاه (نوار تیره)
+ * متن سمت چپ، پلیر ویمیو سمت راست.
+ * زیر پلیر دو آیکون قابل کلیک هست: ویمیو و گوگل درایو.
+ * تا وقتی پلیر بارگذاری نشده، تصویر جانشین سرجایش می‌ماند.
+ */
 export function ShortFilmSection() {
   const { film } = shortFilmSection;
+  // آیکون‌هایی که آدرسشان هنوز خالی است نمایش داده نمی‌شوند
+  const availablePlatforms = (film.platforms || []).filter((platform) => platform.href);
 
   return (
     <section
@@ -23,33 +30,38 @@ export function ShortFilmSection() {
             <h3 className="short-film__title">{film.title}</h3>
             {film.year ? <p className="short-film__year">{film.year}</p> : null}
             {film.role ? <p className="short-film__role">{film.role}</p> : null}
-
-            <div className="short-film__platforms">
-              <span className="short-film__platform-label">{film.watchLabel}</span>
-              {film.platforms.map((platform) => (
-                <a
-                  key={platform.id}
-                  className="short-film__platform"
-                  href={platform.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={platform.label}
-                >
-                  <Icon name={platform.icon} className="short-film__platform-icon" />
-                </a>
-              ))}
-            </div>
           </div>
 
-          <div className="short-film__video">
-            <VimeoEmbed
-              videoId={film.vimeo.videoId}
-              title={film.vimeo.title}
-              poster={film.poster}
-              posterAlt={film.posterAlt}
-              pageUrl={film.vimeo.pageUrl}
-              playLabel={`Play: ${film.title}`}
-            />
+          <div className="short-film__player">
+            <div className="short-film__video">
+              <VimeoEmbed
+                videoId={film.vimeo.videoId}
+                title={film.vimeo.title}
+                poster={film.poster}
+                posterAlt={film.posterAlt}
+                pageUrl={film.vimeo.pageUrl}
+                playLabel={`Play: ${film.title}`}
+              />
+            </div>
+
+            {availablePlatforms.length ? (
+              <ul className="short-film__platforms">
+                {availablePlatforms.map((platform) => (
+                  <li key={platform.id}>
+                    <a
+                      className="short-film__platform"
+                      href={platform.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={platform.label}
+                      title={platform.label}
+                    >
+                      <Icon name={platform.icon} className="short-film__platform-icon" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
           </div>
         </div>
       </div>

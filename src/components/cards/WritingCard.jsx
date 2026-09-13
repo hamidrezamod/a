@@ -1,12 +1,14 @@
 import { MediaFrame } from '../media/MediaFrame.jsx';
-import { Icon } from '../ui/Icon.jsx';
 import { useDetailOverlay } from '../../hooks/useDetailOverlay.js';
 
 /**
  * کارت نوشته‌ها
  * ------------------------------------------------------------
+ * آرایش: عنوان کارت + زیرنویس (مثلاً «Read in Farsi») در یک ستون،
+ * تصویر ۶۷۰×۳۵۵.۷۷ در ستون دیگر. سمت تصویر از فیلد mediaSide فایل محتوا می‌آید.
+ *
  * با کلیک (یا Enter) روی کارت، جزئیات مقاله به‌صورت پاپ‌آپ تمام‌صفحه باز می‌شود؛
- * هیچ صفحه جداگانه‌ای بارگذاری نمی‌شود. لینک hash باعث می‌شود آدرس مقاله
+ * هیچ صفحه جداگانه‌ای بارگذاری نمی‌شود. آدرس hash باعث می‌شود لینک مقاله
  * قابل اشتراک‌گذاری باشد و دکمه Back مرورگر هم درست کار کند.
  */
 export function WritingCard({ article }) {
@@ -40,13 +42,14 @@ export function WritingCard({ article }) {
             aria-haspopup="dialog"
           >
             {article.title}
-            {article.subtitle ? (
-              <span className="writing-card__link">
-                {article.subtitle} <Icon name="arrow-up-right" className="writing-card__link-icon" />
-              </span>
-            ) : null}
           </a>
         </h3>
+
+        {article.subtitle ? (
+          <p className="writing-card__link" aria-hidden="true">
+            {article.subtitle}
+          </p>
+        ) : null}
       </div>
     </article>
   );

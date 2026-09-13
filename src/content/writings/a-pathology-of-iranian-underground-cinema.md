@@ -5,7 +5,7 @@ date: 2024
 lang: fa
 cover: writing01
 coverAlt: A Pathology of Iranian Underground Cinema
-mediaSide: left
+mediaSide: right
 order: 1
 ---
 

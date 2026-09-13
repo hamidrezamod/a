@@ -5,7 +5,7 @@ date: 2024
 lang: fa
 cover: writing03
 coverAlt: Outcry — A Film Not Made for Us
-mediaSide: left
+mediaSide: right
 order: 3
 ---
 

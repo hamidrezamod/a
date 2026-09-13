@@ -1,14 +1,9 @@
-import {
-  education,
-  experience,
-  resumeSection,
-  skills,
-} from '../../content/resume/index.js';
+import { education, experience, resumeSection, skills } from '../../content/resume/index.js';
 import { Icon } from '../ui/Icon.jsx';
 import { SectionHeading } from '../ui/SectionHeading.jsx';
 
 /**
- * بخش رزومه
+ * بخش رزومه — سه ستون کنار هم (طبق دیزاین)
  * محتوا از src/content/resume خوانده می‌شود؛ این کامپوننت فقط چیدمان است.
  */
 export function ResumeSection() {
@@ -17,7 +12,7 @@ export function ResumeSection() {
       <div className="page-shell">
         <SectionHeading id="resume-title">{resumeSection.title}</SectionHeading>
 
-        <div className="section__content resume__categories">
+        <div className="section__content resume__columns">
           <EducationCategory category={education} />
           <ExperienceCategory category={experience} />
           <SkillsCategory category={skills} />
@@ -66,7 +61,7 @@ function ExperienceCategory({ category }) {
   );
 }
 
-/** مهارت‌های نرم‌افزاری: گروه‌های آیکونی با فاصله ۳۲ و آیکون‌هایی با فاصله ۱۶ */
+/** مهارت‌های نرم‌افزاری: گروه‌های آیکونی (فاصله گروه‌ها ۳۲، آیکون‌ها ۱۶) */
 function SkillsCategory({ category }) {
   return (
     <section className="resume-category" aria-labelledby={`resume-${category.id}`}>
@@ -77,9 +72,7 @@ function SkillsCategory({ category }) {
       <div className="resume-groups">
         {category.groups.map((group) => (
           <div className="resume-group" key={group.id}>
-            <p className="resume-group__title">{group.title}</p>
-
-            <ul className="resume-group__icons">
+            <ul className="resume-group__icons" aria-label={group.title}>
               {group.icons.map((icon) => (
                 <li className="resume-group__item" key={icon.id}>
                   <Icon
@@ -91,6 +84,7 @@ function SkillsCategory({ category }) {
                 </li>
               ))}
             </ul>
+            <p className="resume-group__title">{group.title}</p>
           </div>
         ))}
       </div>

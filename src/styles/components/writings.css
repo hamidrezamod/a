@@ -1,7 +1,9 @@
 /* ============================================================
    بخش نوشته‌ها
-   تصویر ۶۷۰×۳۵۵.۷۷ — فاصله کارت‌ها ۲۰۰ — فاصله متن و تصویر ۳۲ —
-   فاصله عنوان کارت تا زیرنویس ۱۶
+   تصویر ۶۷۰×۳۵۵.۷۷ — فاصله کارت‌ها ۲۰۰، فاصله متن و تصویر ۳۲،
+   فاصله عنوان کارت تا زیرنویس ۱۶.
+   کارت اول: تصویر راست — کارت دوم: تصویر چپ — کارت سوم: تصویر راست
+   (طبق دیزاین، آرایش تصویرها متناوب است)
    ============================================================ */
 
 .writings__list {
@@ -40,7 +42,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 380px;
+  max-width: 360px;
 }
 
 .writing-card--media-right .writing-card__body {
@@ -49,13 +51,13 @@
 }
 
 .writing-card__title {
-  font-size: var(--fs-card-title);
-  line-height: var(--lh-card-title);
-  font-weight: var(--fw-medium);
-  letter-spacing: var(--tracking-title);
+  font-size: var(--fs-card-subtitle);
+  line-height: var(--lh-card-subtitle);
+  font-weight: var(--fw-card-title);
+  letter-spacing: 0;
 }
 
-/* لینک اصلی کارت: کل کارت را کلیک‌پذیر می‌کند بدون اینکه چیدمان به‌هم بخورد */
+/* لینک اصلی کارت: کل کارت را کلیک‌پذیر می‌کند بدون به‌هم خوردن چیدمان */
 .writing-card__trigger {
   display: inline-block;
 }
@@ -69,9 +71,9 @@
 .writing-card__link {
   display: block;
   margin-block-start: var(--writing-title-link-gap);
-  font-size: var(--fs-link);
-  line-height: var(--lh-link);
-  font-weight: var(--fw-medium);
+  font-size: var(--fs-button);
+  line-height: var(--lh-button);
+  font-weight: var(--fw-button);
 }
 
 .writing-card__link-icon {

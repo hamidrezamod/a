@@ -29,11 +29,13 @@
   margin: 0;
   font-size: var(--fs-section-title);
   line-height: var(--lh-section-title);
-  font-weight: var(--fw-medium);
+  font-weight: var(--fw-section-title);
   letter-spacing: var(--tracking-title);
 }
 
 .section__title--right {
+  /* طبق دیزاین، عنوان‌های راست‌چین کمی از لبه ناحیه محتوا فاصله دارند */
+  padding-inline-end: var(--title-right-inset);
   text-align: right;
 }
 

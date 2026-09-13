@@ -16,11 +16,11 @@ export function HeroSection() {
           priority
         />
 
-        <h1 id="hero-title" className="hero__title">
+        <h1 id="hero-title" className="hero__title type-hero-title">
           {profile.name}
         </h1>
 
-        <p className="hero__subtitle">{hero.subtitle}</p>
+        <p className="hero__subtitle type-hero-subtitle">{hero.subtitle}</p>
 
         <div className="hero__cue">
           <ScrollCue target={hero.scrollCueTarget} label={hero.scrollCueLabel} />

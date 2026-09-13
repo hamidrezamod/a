@@ -1,6 +1,8 @@
 /**
  * بخش فیلم کوتاه
  * پلیر ویمیو + تصویر جانشین (poster)
+ * آیکون‌های زیر پلیر: ویمیو و گوگل درایو
+ * آدرس گوگل درایو را وقتی فرستادی، فقط مقدار را عوض کن.
  */
 export const shortFilmSection = {
   id: 'short-film',
@@ -11,16 +13,26 @@ export const shortFilmSection = {
     role: 'Director & Writer',
     poster: 'short-film',
     posterAlt: 'Still frame from The Problem Statement: Reframing Migration',
-    watchLabel: 'Watch on:',
     vimeo: {
       videoId: '1225059359',
       pageUrl: 'https://vimeo.com/1225059359',
-      // عنوان رسمی ویدیو در ویمیو
-      title: 'The Problem Statement: Reframing Migration - صورت مسئله: بازخوانی کوچ ها',
+      title:
+        'The Problem Statement: Reframing Migration - صورت مسئله: بازخوانی کوچ ها',
     },
     platforms: [
-      { id: 'vimeo', label: 'Watch on Vimeo', href: 'https://vimeo.com/1225059359', icon: 'play' },
-      { id: 'vimeo-link', label: 'Open the film on Vimeo', href: 'https://vimeo.com/1225059359', icon: 'arrow-up-right' },
+      {
+        id: 'vimeo',
+        label: 'Watch on Vimeo',
+        href: 'https://vimeo.com/1225059359',
+        icon: 'vimeo',
+      },
+      {
+        id: 'google-drive',
+        label: 'Watch on Google Drive',
+        // TODO: آدرس گوگل درایو را اینجا بگذار
+        href: '',
+        icon: 'google-drive',
+      },
     ],
   },
 };

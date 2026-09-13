@@ -33,26 +33,66 @@
   --fw-semibold: 600;
   --fw-bold: 700;
 
-  /* ---------- تایپوگرافی: اندازه‌ها ----------
-     مقدارها بر اساس رفرنس تایپوگرافی تنظیم می‌شوند (در انتظار تصویر مرجع) */
+  /* ---------- تایپوگرافی: اندازه‌ها (طبق رفرنس تایپوگرافی ارسالی) ---------- */
+  /* Hero Title      128px / 100px / 600 */
   --fs-hero: 128px;
-  --lh-hero: 1.06;
+  --lh-hero: 100px;
+  --fw-hero: var(--fw-semibold);
+
+  /* Hero Subtitle   34px / 38px / 400 */
+  --fs-hero-subtitle: 34px;
+  --lh-hero-subtitle: 38px;
+  --fw-hero-subtitle: var(--fw-regular);
+
+  /* Section Title   64px / 69px / 600 */
   --fs-section-title: 64px;
-  --lh-section-title: 1.08;
+  --lh-section-title: 69px;
+  --fw-section-title: var(--fw-semibold);
+
+  /* Card Title      40px / 44px / 600 */
   --fs-card-title: 40px;
-  --lh-card-title: 1.1;
-  --fs-card-meta: 24px;
-  --lh-card-meta: 1.5;
-  --fs-body: 20px;
-  --lh-body: 1.55;
-  --fs-body-large: 24px;
-  --lh-body-large: 1.5;
-  --fs-link: 19px;
-  --lh-link: 1.3;
-  --fs-overline: 16px;
-  --lh-overline: 1.4;
-  --fs-small: 16px;
-  --lh-small: 1.5;
+  --lh-card-title: 44px;
+  --fw-card-title: var(--fw-semibold);
+
+  /* Card Subtitle   24px / 30px / 400 */
+  --fs-card-subtitle: 24px;
+  --lh-card-subtitle: 30px;
+  --fw-card-subtitle: var(--fw-regular);
+
+  /* Card Body       20px / 31px / 400 */
+  --fs-card-body: 20px;
+  --lh-card-body: 31px;
+  --fw-card-body: var(--fw-regular);
+
+  /* Navbar / Menu   19px / Auto / 500 */
+  --fs-nav: 19px;
+  --lh-nav: 1.2;
+  --fw-nav: var(--fw-medium);
+
+  /* Button          19px / Auto / 500 */
+  --fs-button: 19px;
+  --lh-button: 1.2;
+  --fw-button: var(--fw-medium);
+
+  /* Label           16px / Auto / 500 */
+  --fs-label: 16px;
+  --lh-label: 1.5;
+  --fw-label: var(--fw-medium);
+
+  /* نام‌های عمومی‌تر که در بخش‌های مختلف استفاده می‌شوند */
+  --fs-body: var(--fs-card-body);
+  --lh-body: var(--lh-card-body);
+  --fs-body-large: var(--fs-card-subtitle);
+  --lh-body-large: var(--lh-card-subtitle);
+  --fs-link: var(--fs-button);
+  --lh-link: var(--lh-button);
+  --fs-overline: var(--fs-label);
+  --lh-overline: var(--lh-label);
+  --fs-small: var(--fs-label);
+  --lh-small: var(--lh-label);
+  --fs-card-meta: var(--fs-label);
+  --lh-card-meta: var(--lh-label);
+
   --font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
   --tracking-title: -0.02em;
   --tracking-none: 0;
@@ -72,6 +112,14 @@
   --space-md-sm: 24px;
   --space-sm: 16px;
   --space-xs: 8px;
+
+  /* ---------- چیدمان صفحه اصلی (طبق دیزاین دسکتاپ) ---------- */
+  --hero-title-content-gap: 160px; /* فاصله زیرعنوان تا اولین محتوای بعدی */
+  --column-gap-wide: 60px; /* فاصله پیش‌فرض دو ستون در بخش‌های دسکتاپ */
+
+  /* بخش‌های راست‌چین دیزاین */
+  --title-right-inset: 34px;
+  --theatre-poster-height: 632px;
 
   /* ---------- هیرو ---------- */
   --hero-top: 120px; /* فاصله بالای صفحه تا بخش هیرو */
@@ -111,6 +159,12 @@
 
   /* ---------- پادکست ---------- */
   --podcast-cover-width: 448px;
+
+  /* ---------- رزومه: سه ستون ---------- */
+  --resume-column-gap: 64px;
+
+  /* ---------- اطلاعات تماس ---------- */
+  --contact-column-gap: 48px;
 
   /* ---------- رزومه ---------- */
   --resume-category-gap: 64px;

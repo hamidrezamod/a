@@ -20,8 +20,17 @@ import { useDetailOverlay } from '../../hooks/useDetailOverlay.js';
 export function PageShell() {
   const { isOpen } = useDetailOverlay();
 
+  // منو چسبان است و در جریان صفحه فضای خودش را می‌گیرد؛
+  // این offset اجازه می‌دهد فاصله «۱۲۰ پیکسل از بالای صفحه تا هیرو»
+  // دقیقاً مثل دیزاین حفظ شود.
+  const headerOffset = 0;
+
   return (
-    <div className="site" inert={isOpen ? true : undefined}>
+    <div
+      className="site"
+      style={{ '--header-offset': `${headerOffset}px` }}
+      inert={isOpen ? true : undefined}
+    >
       <a className="skip-link" href="#main">
         Skip to content
       </a>

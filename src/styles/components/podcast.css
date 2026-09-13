@@ -1,36 +1,48 @@
 /* ============================================================
-   بخش پادکست — عرض تصویر ۴۴۸ (ترکیب دسکتاپ طبق دیزاین)
+   بخش پادکست (نوار تیره) — عنوان بخش گوشه راست صفحه،
+   متن سمت راست، تصویر ۴۴۸ سمت چپ (طبق دیزاین)
    ============================================================ */
 
 .podcast__grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) var(--podcast-cover-width);
+  grid-template-areas: 'copy media';
   align-items: center;
   gap: var(--about-text-media-gap);
 }
 
 .podcast__copy {
+  grid-area: copy;
   max-width: 460px;
+  text-align: right;
+}
+
+.podcast__media {
+  grid-area: media;
+  width: var(--podcast-cover-width);
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
 }
 
 .podcast__title {
   font-size: var(--fs-card-title);
   line-height: var(--lh-card-title);
-  font-weight: var(--fw-medium);
+  font-weight: var(--fw-card-title);
   letter-spacing: var(--tracking-title);
 }
 
 .podcast__role {
   margin-block-start: var(--film-title-subtitle-gap);
-  font-size: var(--fs-body-large);
-  line-height: var(--lh-body-large);
-  opacity: 0.85;
+  font-size: var(--fs-card-subtitle);
+  line-height: var(--lh-card-subtitle);
+  font-weight: var(--fw-card-subtitle);
+  opacity: 0.9;
 }
 
 .podcast__links {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   gap: var(--space-sm);
   margin-block-start: var(--space-lg);
 }
@@ -39,23 +51,18 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-sm);
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
+  font-size: var(--fs-button);
+  line-height: var(--lh-button);
+  font-weight: var(--fw-button);
   transition: opacity var(--motion-duration-fast) var(--motion-ease-out);
 }
 
-.podcast__link:hover {
+.podcast__link:hover,
+.podcast__link:focus-visible {
   opacity: 0.7;
 }
 
 .podcast__link-icon {
-  width: 24px;
-  height: 24px;
-  flex: none;
-}
-
-.podcast__media {
-  width: var(--podcast-cover-width);
-  max-width: 100%;
-  aspect-ratio: 1 / 1;
+  width: 20px;
+  height: 20px;
 }

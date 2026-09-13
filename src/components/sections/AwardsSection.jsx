@@ -7,7 +7,7 @@ export function AwardsSection() {
   return (
     <section id={awardsSection.id} className="section awards" aria-labelledby="awards-title">
       <div className="page-shell">
-        <SectionHeading id="awards-title" align="right">
+        <SectionHeading id="awards-title" align="center">
           {awardsSection.title}
         </SectionHeading>
 

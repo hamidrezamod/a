@@ -1,46 +1,37 @@
 /* ============================================================
-   منوی اصلی سایت
-   نکته: موقعیت دقیق منو با دریافت دیزاین نهایی تنظیم می‌شود.
+   منوی اصلی سایت (Navbar / Menu — تایپوگرافی ۱۹px / ۵۰۰)
+   طبق دیزاین: بالای صفحه، چسبان، فهرست وسط‌چین، هم‌رنگ پس‌زمینه صفحه
    ============================================================ */
 
 .site-header {
-  position: absolute;
+  position: sticky;
   inset-block-start: 0;
-  inset-inline: 0;
   z-index: var(--z-header);
-  padding-block: var(--space-md);
-  pointer-events: none;
+  background-color: var(--color-canvas);
 }
 
 .site-header__inner {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--space-lg);
-  pointer-events: auto;
-}
-
-.site-header__brand {
-  font-size: var(--fs-small);
-  line-height: 1;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  white-space: nowrap;
+  align-items: center;
+  justify-content: center;
+  padding-block: var(--space-md-sm);
 }
 
 .site-nav__list {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
+  justify-content: center;
   gap: var(--space-md-sm);
 }
 
 .site-nav__link {
   display: inline-block;
-  font-size: var(--fs-small);
-  line-height: 1.2;
-  letter-spacing: 0.02em;
-  opacity: 0.72;
+  font-size: var(--fs-nav);
+  line-height: var(--lh-nav);
+  font-weight: var(--fw-nav);
+  letter-spacing: 0.01em;
+  opacity: 0.78;
   transition: opacity var(--motion-duration-fast) var(--motion-ease-out);
 }
 

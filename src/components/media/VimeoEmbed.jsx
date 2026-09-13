@@ -6,11 +6,18 @@ import { Icon } from '../ui/Icon.jsx';
  * پلیر ویمیو با تصویر جانشین (poster)
  * ------------------------------------------------------------
  * تا وقتی کاربر روی دکمه پخش کلیک نکند، ویمیو بارگذاری نمی‌شود
- * (هم سبک‌تر است، هم در صورت عدم دسترسی به ویمیو، تصویر جانشین سرجایش می‌ماند).
- * حتی وقتی پلیر بارگذاری می‌شود، تصویر پشت آن باقی می‌ماند تا اگر پلیر خراب شد،
- * چیدمان و ظاهر صفحه سالم بماند.
+ * (هم سبک‌تر است، هم اگر دسترسی به ویمیو نبود، تصویر جانشین سرجایش می‌ماند
+ * و چیدمان صفحه سالم می‌ماند). پس از کلیک، خود پلیر ویمیو نمایش داده می‌شود
+ * و کاربر می‌تواند فیلم را داخل سایت پخش کند.
  */
-export function VimeoEmbed({ videoId, title, poster, posterAlt = '', pageUrl, playLabel = 'Play the film' }) {
+export function VimeoEmbed({
+  videoId,
+  title,
+  poster,
+  posterAlt = '',
+  pageUrl,
+  playLabel = 'Play the film',
+}) {
   const [isPlaying, setIsPlaying] = useState(false);
   const src = imageUrl(poster);
   const size = imageSize(poster);
@@ -23,7 +30,15 @@ export function VimeoEmbed({ videoId, title, poster, posterAlt = '', pageUrl, pl
   return (
     <div className="vimeo-embed" style={{ '--media-ratio': aspectRatio }}>
       {src ? (
-        <img className="vimeo-embed__poster" src={src} alt={posterAlt} width={size?.[0]} height={size?.[1]} loading="lazy" decoding="async" />
+        <img
+          className="vimeo-embed__poster"
+          src={src}
+          alt={posterAlt}
+          width={size?.[0]}
+          height={size?.[1]}
+          loading="lazy"
+          decoding="async"
+        />
       ) : null}
 
       {isPlaying ? (
@@ -37,7 +52,12 @@ export function VimeoEmbed({ videoId, title, poster, posterAlt = '', pageUrl, pl
           allowFullScreen
         />
       ) : (
-        <button type="button" className="vimeo-embed__play" onClick={() => setIsPlaying(true)} aria-label={playLabel}>
+        <button
+          type="button"
+          className="vimeo-embed__play"
+          onClick={() => setIsPlaying(true)}
+          aria-label={playLabel}
+        >
           <Icon name="play" className="vimeo-embed__play-icon" />
         </button>
       )}

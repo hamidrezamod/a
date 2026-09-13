@@ -12,7 +12,7 @@ export function TheatreSection() {
   return (
     <section id={theatreSection.id} className="section theatre" aria-labelledby="theatre-title">
       <div className="page-shell">
-        <SectionHeading id="theatre-title" align="right">
+        <SectionHeading id="theatre-title" align="center">
           {theatreSection.title}
         </SectionHeading>
 

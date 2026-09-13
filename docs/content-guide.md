@@ -140,3 +140,25 @@ layout: standard
 ## ۹) افزودن پری‌لودر و ترنزیشن‌های اختصاصی
 
 پوشه `src/animation/` و فایل راهنمای همان پوشه را ببین: `src/animation/README.md`.
+
+
+---
+
+## ۱۰) جدول تایپوگرافی (رفرنس رسمی سایت)
+
+همه این مقادیر در `src/styles/tokens.css` تعریف شده‌اند و در همه بخش‌ها استفاده می‌شوند:
+
+| کاربرد | Size | Line Height | Weight | توکن |
+| --- | --- | --- | --- | --- |
+| Hero Title | ۱۲۸px | ۱۰۰px | ۶۰۰ | `--fs-hero` / `--lh-hero` / `--fw-hero` |
+| Hero Subtitle | ۳۴px | ۳۸px | ۴۰۰ | `--fs-hero-subtitle` |
+| Section Title | ۶۴px | ۶۹px | ۶۰۰ | `--fs-section-title` |
+| Card Title | ۴۰px | ۴۴px | ۶۰۰ | `--fs-card-title` |
+| Card Subtitle | ۲۴px | ۳۰px | ۴۰۰ | `--fs-card-subtitle` |
+| Card Body | ۲۰px | ۳۱px | ۴۰۰ | `--fs-card-body` |
+| Navbar / Menu | ۱۹px | Auto | ۵۰۰ | `--fs-nav` |
+| Button | ۱۹px | Auto | ۵۰۰ | `--fs-button` |
+| Label | ۱۶px | Auto | ۵۰۰ | `--fs-label` |
+
+کلاس‌های آماده در `src/styles/typography.css`: `.type-hero-title`، `.type-hero-subtitle`،
+`.type-section-title`، `.type-card-title`، `.type-card-subtitle`، `.type-label`، `.type-body`.
