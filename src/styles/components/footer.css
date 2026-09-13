@@ -3,7 +3,8 @@
    ============================================================ */
 
 .site-footer {
-  padding-block: var(--space-md);
+  /* فضای پایین فوتر به اندازه منوی شناور است تا متن فوتر زیر منو نرود */
+  padding-block: var(--space-md) calc(var(--nav-dock-inset) + var(--nav-height) + 16px);
   background-color: var(--color-surface-dark);
   color: var(--color-surface-dark-text);
 }
