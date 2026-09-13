@@ -129,6 +129,23 @@ layout: standard
 - اندازه‌های هیرو، تصاویر، پوسترها، ویدیو: با نام‌های واضح مثل `--hero-media-width`
 - زمان‌بندی حرکت: `--motion-*`
 
+### اندازه‌های دقیق هیرو (طبق دیزاین)
+
+| مورد | مقدار | توکن |
+| --- | --- | --- |
+| عرض × ارتفاع قاب هیرو | ۱۱۲۰ × ۵۲۸.۳۵ پیکسل | `--hero-width` / `--hero-height` |
+| فاصله تا بالای صفحه | ۱۲۰ پیکسل | `--hero-top` |
+| اندازه تصویر | ۳۴۸.۵۱ × ۳۵۸.۳۵ پیکسل | `--hero-media-width` / `--hero-media-height` |
+| فاصله تصویر تا عنوان | ۱۶ پیکسل | `--hero-title-gap` |
+| عنوان | ۱۰۴px / ۱۰۰px / وزن ۶۰۰ | `--fs-hero` / `--lh-hero` / `--fw-hero` |
+| فاصله عنوان تا زیرعنوان | ۱۶ پیکسل | `--hero-subtitle-gap` |
+| زیرعنوان | ۳۰px / ۳۸px / وزن ۴۰۰ | `--fs-hero-subtitle` / `--lh-hero-subtitle` / `--fw-hero-subtitle` |
+| فاصله تا آیکون پایین‌رونده | ۹۲ پیکسل | `--hero-cue-gap` |
+| فاصله هیرو تا بخش درباره من | ۳۳۶ پیکسل | `--hero-bottom` |
+
+ارتفاع قاب هیرو جمع همان اجزاست: ۳۵۸.۳۵ + ۱۶ + ۱۰۰ + ۱۶ + ۳۸ = ۵۲۸.۳۵ پیکسل.
+آیکون پایین‌رونده بیرون این قاب قرار دارد و ارتفاعش را زیاد نمی‌کند.
+
 ## ۸) تغییر متن‌های عمومی سایت
 
 - نام و عنوان: `src/content/site/profile.js`
@@ -150,8 +167,8 @@ layout: standard
 
 | کاربرد | Size | Line Height | Weight | توکن |
 | --- | --- | --- | --- | --- |
-| Hero Title | ۱۲۸px | ۱۰۰px | ۶۰۰ | `--fs-hero` / `--lh-hero` / `--fw-hero` |
-| Hero Subtitle | ۳۴px | ۳۸px | ۴۰۰ | `--fs-hero-subtitle` |
+| Hero Title | ۱۰۴px | ۱۰۰px | ۶۰۰ | `--fs-hero` / `--lh-hero` / `--fw-hero` |
+| Hero Subtitle | ۳۰px | ۳۸px | ۴۰۰ | `--fs-hero-subtitle` |
 | Section Title | ۶۴px | ۶۹px | ۶۰۰ | `--fs-section-title` |
 | Card Title | ۴۰px | ۴۴px | ۶۰۰ | `--fs-card-title` |
 | Card Subtitle | ۲۴px | ۳۰px | ۴۰۰ | `--fs-card-subtitle` |

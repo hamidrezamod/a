@@ -4,10 +4,13 @@
 @import './base.css';
 @import './layout.css';
 
+/* ترتیب مهم است: استایل‌های پایه‌ی مشترک (media) پیش از استایل بخش‌ها می‌آیند
+   تا اندازه‌های اختصاصی هر بخش (مثل .hero__media) روی .media سوار شوند. */
+@import './components/media.css';
+
 @import './components/menu.css';
 @import './components/hero.css';
 @import './components/about.css';
-@import './components/media.css';
 @import './components/writings.css';
 @import './components/short-film.css';
 @import './components/theatre.css';

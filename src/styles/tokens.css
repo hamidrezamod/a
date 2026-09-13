@@ -42,13 +42,13 @@
   --fw-bold: 700;
 
   /* ---------- تایپوگرافی: اندازه‌ها (طبق رفرنس تایپوگرافی ارسالی) ---------- */
-  /* Hero Title      128px / 100px / 600 */
-  --fs-hero: 128px;
+  /* Hero Title      104px / 100px / 600 */
+  --fs-hero: 104px;
   --lh-hero: 100px;
   --fw-hero: var(--fw-semibold);
 
-  /* Hero Subtitle   34px / 38px / 400 */
-  --fs-hero-subtitle: 34px;
+  /* Hero Subtitle   30px / 38px / 400 */
+  --fs-hero-subtitle: 30px;
   --lh-hero-subtitle: 38px;
   --fw-hero-subtitle: var(--fw-regular);
 
@@ -145,12 +145,17 @@
   --theatre-poster-height: 632px;
 
   /* ---------- هیرو ---------- */
+  /* اندازه کل قاب هیرو: ۱۱۲۰ × ۵۲۸.۳۵ پیکسل
+     جمع ارتفاع: ۳۵۸.۳۵ (تصویر) + ۱۶ + ۱۰۰ (عنوان) + ۱۶ + ۳۸ (زیرعنوان) = ۵۲۸.۳۵ */
+  --hero-width: var(--content-width); /* ۱۱۲۰ پیکسل */
+  --hero-height: 528.35px;
   --hero-top: 120px; /* فاصله بالای صفحه تا بخش هیرو */
-  --hero-media-width: 348px;
-  --hero-media-height: 358px;
+  --hero-media-width: 348.51px;
+  --hero-media-height: 358.35px;
   --hero-title-gap: 16px; /* فاصله تصویر تا عنوان */
   --hero-subtitle-gap: 16px; /* فاصله عنوان تا زیرعنوان */
-  --hero-cue-gap: 92px; /* فاصله زیرعنوان تا آیکون پایین */
+  --hero-cue-gap: 92px; /* فاصله زیرعنوان تا آیکون پایین‌رونده */
+  --hero-cue-size: 32px; /* اندازه آیکون پایین‌رونده */
   --hero-bottom: 336px; /* فاصله هیرو تا بخش درباره من */
 
   /* ---------- درباره من ---------- */

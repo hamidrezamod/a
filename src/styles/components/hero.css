@@ -1,27 +1,50 @@
 /* ============================================================
-   بخش هیرو (طبق دیزاین)
-   فاصله‌های دقیق: ۱۲۰ بالای صفحه، تصویر ۳۴۸×۳۵۸،
-   ۱۶ تا عنوان (۱۲۸px/۱۰۰px/۶۰۰)، ۱۶ تا زیرعنوان (۳۴px/۳۸px/۴۰۰)،
-   ۹۲ تا آیکون پایین، ۳۳۶ تا بخش درباره من
+   بخش هیرو (طبق دیزاین — اندازه‌های دقیق)
+
+   قاب هیرو:            ۱۱۲۰ × ۵۲۸.۳۵ پیکسل
+   فاصله از بالای صفحه: ۱۲۰ پیکسل
+   تصویر:               ۳۴۸.۵۱ × ۳۵۸.۳۵ پیکسل
+   فاصله تصویر تا عنوان: ۱۶ پیکسل
+   عنوان:               ۱۰۴px / ۱۰۰px / ۶۰۰ (نیمه‌ضخیم)
+   فاصله عنوان تا زیرعنوان: ۱۶ پیکسل
+   زیرعنوان:            ۳۰px / ۳۸px / ۴۰۰ (معمولی)
+   فاصله تا آیکون پایین‌رونده: ۹۲ پیکسل
+   فاصله هیرو تا بخش درباره من: ۳۳۶ پیکسل
+
+   جمع ارتفاع قاب هیرو:
+   ۳۵۸.۳۵ + ۱۶ + ۱۰۰ + ۱۶ + ۳۸ = ۵۲۸.۳۵ پیکسل
    ============================================================ */
 
 .hero {
-  /* ۱۲۰ پیکسل فاصله از بالای قاب صفحه (منو پایین صفحه شناور است) */
+  /* ۱۲۰ پیکسل فاصله از بالای صفحه (منو پایین صفحه شناور است) */
   padding-block-start: var(--hero-top);
   padding-block-end: var(--hero-bottom);
   text-align: center;
 }
 
+/* عرض این قاب از .page-shell می‌آید: دقیقاً ۱۱۲۰ پیکسل (--hero-width) */
 .hero__inner {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* قاب اصلی هیرو: تصویر + عنوان + زیرعنوان = ۱۱۲۰ × ۵۲۸.۳۵ پیکسل */
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: var(--hero-width);
+  min-height: var(--hero-height);
+}
+
 .hero__media {
+  flex: none;
   width: var(--hero-media-width);
+  height: var(--hero-media-height);
   max-width: 100%;
-  aspect-ratio: 348 / 358;
+  aspect-ratio: 348.51 / 358.35;
 }
 
 .hero__title {
@@ -39,7 +62,10 @@
   font-weight: var(--fw-hero-subtitle);
 }
 
+/* ۹۲ پیکسل از زیرعنوان تا آیکون پایین‌رونده */
 .hero__cue {
+  display: flex;
+  justify-content: center;
   margin-block-start: var(--hero-cue-gap);
 }
 
@@ -48,8 +74,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: var(--hero-cue-size);
+  height: var(--hero-cue-size);
   color: var(--color-ink);
   transition: opacity var(--motion-duration-fast) var(--motion-ease-out);
 }
@@ -63,11 +89,23 @@
   height: 100%;
 }
 
-/* ---------- حفاظت عرض: دقیقاً ۱۲۸px در قاب ۱۴۴۰ و کوچک‌تر شدن نرم در ویوپورت‌های باریک‌تر
-   (طراحی موبایل جداگانه و با دیزاین اختصاصی می‌آید) ---------- */
+/* ---------- حفاظت عرض: در قاب ۱۴۴۰ همه‌چیز دقیقاً همان اعداد بالاست.
+   در ویوپورت‌های باریک‌تر، عنوان و تصویر متناسب با عرض موجود کوچک می‌شوند
+   تا نشکنند (طراحی موبایل جداگانه و با دیزاین اختصاصی می‌آید). ---------- */
 @media (max-width: 1439px) {
+  .hero__content {
+    /* ارتفاع ثابت فقط برای قاب دیزاین معنا دارد */
+    min-height: 0;
+  }
+
+  .hero__media {
+    /* نسبت تصویر (۳۴۸.۵۱ / ۳۵۸.۳۵) حفظ می‌شود */
+    height: auto;
+  }
+
   .hero__title {
-    font-size: min(var(--fs-hero), 8.6vw);
-    line-height: 1.08;
+    /* ۱۰.۱۵ ≈ عرض «Hamid Reza Mohammadi» بر حسب em در فونت Crimson Pro */
+    font-size: min(var(--fs-hero), calc((100vw - (var(--page-gutter) * 2) - 16px) / 10.15));
+    line-height: 0.9615; /* همان نسبت ۱۰۰ ÷ ۱۰۴ */
   }
 }
