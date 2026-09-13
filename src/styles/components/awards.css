@@ -1,0 +1,22 @@
+/* ============================================================
+   بخش افتخارات و گواهی‌نامه‌ها (طبق دیزاین: دو ستون)
+   عرض هر تصویر ۳۳۰.۶۷ — فاصله ۶۴
+   ============================================================ */
+
+.awards__grid {
+  display: grid;
+  grid-template-columns: repeat(2, var(--award-image-width));
+  justify-content: center;
+  column-gap: var(--award-gap);
+  row-gap: var(--award-gap);
+  align-items: start;
+}
+
+.award-card {
+  width: 100%;
+}
+
+.award-card__media {
+  width: var(--award-image-width);
+  max-width: 100%;
+}

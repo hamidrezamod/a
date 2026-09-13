@@ -1,0 +1,83 @@
+/* ============================================================
+   چیدمان کلی صفحه — قاب، بخش‌ها و ریتم عمودی
+   ============================================================ */
+
+/* قاب اصلی سایت: عرض دیزاین ۱۴۴۰ و ناحیه محتوا ۱۱۲۰ */
+.site {
+  position: relative;
+  width: 100%;
+  max-width: var(--frame-width);
+  margin-inline: auto;
+}
+
+.page-shell {
+  width: min(100% - (var(--page-gutter) * 2), var(--content-width));
+  margin-inline: auto;
+}
+
+/* ---------- بخش‌های اصلی ---------- */
+.section {
+  position: relative;
+  margin-top: var(--space-section);
+}
+
+.section--flush-top {
+  margin-top: 0;
+}
+
+.section__title {
+  margin: 0;
+  font-size: var(--fs-section-title);
+  line-height: var(--lh-section-title);
+  font-weight: var(--fw-section-title);
+  letter-spacing: var(--tracking-title);
+}
+
+.section__title--right {
+  /* طبق دیزاین، عنوان‌های راست‌چین کمی از لبه ناحیه محتوا فاصله دارند */
+  padding-inline-end: var(--title-right-inset);
+  text-align: right;
+}
+
+.section__title--center {
+  text-align: center;
+}
+
+.section__title--light {
+  color: var(--color-text-inverse);
+}
+
+.section__content {
+  margin-top: var(--space-title-content);
+}
+
+/* ---------- نوارهای تیره (فیلم کوتاه و پادکست) ---------- */
+.band {
+  margin-top: var(--space-section);
+  padding-block: var(--band-padding-y);
+  background-color: var(--color-surface-dark);
+  color: var(--color-surface-dark-text);
+}
+
+.band--dark {
+  background-color: var(--color-surface-dark);
+  color: var(--color-surface-dark-text);
+}
+
+.band__content {
+  margin-top: var(--space-title-content);
+}
+
+/* ---------- حالت‌های مشترک ---------- */
+.is-hidden-visually {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}

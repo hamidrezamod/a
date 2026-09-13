@@ -1,0 +1,37 @@
+/* ============================================================
+   بخش اطلاعات تماس (طبق دیزاین: دو ستون وسط‌چین، آیکون + برچسب)
+   تایپوگرافی برچسب‌ها: ۱۶px / ۵۰۰
+   ============================================================ */
+
+.contact {
+  padding-block-end: var(--space-xl);
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  justify-content: center;
+  column-gap: var(--contact-column-gap);
+  row-gap: var(--space-sm);
+}
+
+.contact__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--fs-label);
+  line-height: var(--lh-label);
+  font-weight: var(--fw-label);
+  transition: opacity var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.contact__item:hover,
+.contact__item:focus-visible {
+  opacity: 0.65;
+}
+
+.contact__icon {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}

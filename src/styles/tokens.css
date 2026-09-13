@@ -1,0 +1,212 @@
+/* ============================================================
+   توکن‌های طراحی (Design Tokens)
+   تمام رنگ‌ها، اندازه‌ها، فاصله‌ها و زمان‌بندی انیمیشن‌ها
+   فقط از همین فایل کنترل می‌شوند. برای تغییر کلی سایت همین‌جا را عوض کن.
+   ============================================================ */
+
+:root {
+  /* ---------- رنگ‌ها (فقط همین دو رنگ اصلی مجاز است) ---------- */
+  --color-canvas: #F7F4EF; /* پس‌زمینه اصلی */
+  --color-ink: #413F3E; /* رنگ تیره اصلی */
+  --color-text: var(--color-ink);
+  --color-text-inverse: var(--color-canvas);
+  --color-surface-dark: var(--color-ink);
+  --color-surface-dark-text: var(--color-canvas);
+
+  /* رنگ‌های کمکی (فقط برای حالت‌های خالی/جای‌نگهدار تصویر) */
+  --color-placeholder: #E9E4DB;
+  --color-placeholder-dark: #56544F;
+  --color-line-soft: rgba(65, 63, 62, 0.16);
+  --color-line-soft-inverse: rgba(247, 244, 239, 0.22);
+  --color-overlay-scrim: rgba(65, 63, 62, 0.72);
+  --color-focus: var(--color-ink);
+
+  /* ---------- تایپوگرافی: خانواده فونت ---------- */
+  --font-display: 'Crimson Pro', 'Times New Roman', Georgia, serif;
+  /* فونت متن‌های فارسی (مقاله‌ها).
+     «Portfolio Persian» نام فونت داخلی است؛ وقتی فایل فونت را در
+     src/assets/fonts/persian بگذاری، خودکار فعال می‌شود.
+     تا آن زمان از فونت‌های جانشین استفاده می‌شود. */
+  --font-fa: 'Portfolio Persian', 'Vazirmatn', 'IRANSansX', 'IRANSans', Tahoma, system-ui, sans-serif;
+
+  /* ---------- تایپوگرافی: وزن‌ها ---------- */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* ---------- تایپوگرافی: اندازه‌ها (طبق رفرنس تایپوگرافی ارسالی) ---------- */
+  /* Hero Title      128px / 100px / 600 */
+  --fs-hero: 128px;
+  --lh-hero: 100px;
+  --fw-hero: var(--fw-semibold);
+
+  /* Hero Subtitle   34px / 38px / 400 */
+  --fs-hero-subtitle: 34px;
+  --lh-hero-subtitle: 38px;
+  --fw-hero-subtitle: var(--fw-regular);
+
+  /* Section Title   64px / 69px / 600 */
+  --fs-section-title: 64px;
+  --lh-section-title: 69px;
+  --fw-section-title: var(--fw-semibold);
+
+  /* Card Title      40px / 44px / 600 */
+  --fs-card-title: 40px;
+  --lh-card-title: 44px;
+  --fw-card-title: var(--fw-semibold);
+
+  /* Card Subtitle   24px / 30px / 400 */
+  --fs-card-subtitle: 24px;
+  --lh-card-subtitle: 30px;
+  --fw-card-subtitle: var(--fw-regular);
+
+  /* Card Body       20px / 31px / 400 */
+  --fs-card-body: 20px;
+  --lh-card-body: 31px;
+  --fw-card-body: var(--fw-regular);
+
+  /* Navbar / Menu   19px / Auto / 500 */
+  --fs-nav: 19px;
+  --lh-nav: 1.2;
+  --fw-nav: var(--fw-medium);
+
+  /* Button          19px / Auto / 500 */
+  --fs-button: 19px;
+  --lh-button: 1.2;
+  --fw-button: var(--fw-medium);
+
+  /* Label           16px / Auto / 500 */
+  --fs-label: 16px;
+  --lh-label: 1.5;
+  --fw-label: var(--fw-medium);
+
+  /* نام‌های عمومی‌تر که در بخش‌های مختلف استفاده می‌شوند */
+  --fs-body: var(--fs-card-body);
+  --lh-body: var(--lh-card-body);
+  --fs-body-large: var(--fs-card-subtitle);
+  --lh-body-large: var(--lh-card-subtitle);
+  --fs-link: var(--fs-button);
+  --lh-link: var(--lh-button);
+  --fs-overline: var(--fs-label);
+  --lh-overline: var(--lh-label);
+  --fs-small: var(--fs-label);
+  --lh-small: var(--lh-label);
+  --fs-card-meta: var(--fs-label);
+  --lh-card-meta: var(--lh-label);
+
+  --font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  --tracking-title: -0.02em;
+  --tracking-none: 0;
+
+  /* ---------- ابعاد صفحه ---------- */
+  --frame-width: 1440px; /* قاب کلی دیزاین دسکتاپ */
+  --content-width: 1120px; /* عرض اصلی محتوا */
+  --page-gutter: clamp(24px, 4vw, 160px);
+
+  /* ---------- فاصله‌های عمومی ---------- */
+  --space-section: 320px; /* فاصله بین بخش‌های اصلی */
+  --space-title-content: 160px; /* فاصله عنوان بخش تا محتوای آن */
+  --space-xxl: 200px;
+  --space-xl: 160px;
+  --space-lg: 64px;
+  --space-md: 32px;
+  --space-md-sm: 24px;
+  --space-sm: 16px;
+  --space-xs: 8px;
+
+  /* ---------- چیدمان صفحه اصلی (طبق دیزاین دسکتاپ) ---------- */
+  --hero-title-content-gap: 160px; /* فاصله زیرعنوان تا اولین محتوای بعدی */
+  --column-gap-wide: 60px; /* فاصله پیش‌فرض دو ستون در بخش‌های دسکتاپ */
+
+  /* بخش‌های راست‌چین دیزاین */
+  --title-right-inset: 34px;
+  --theatre-poster-height: 632px;
+
+  /* ---------- هیرو ---------- */
+  --hero-top: 120px; /* فاصله بالای صفحه تا بخش هیرو */
+  --hero-media-width: 348px;
+  --hero-media-height: 358px;
+  --hero-title-gap: 16px; /* فاصله تصویر تا عنوان */
+  --hero-subtitle-gap: 16px; /* فاصله عنوان تا زیرعنوان */
+  --hero-cue-gap: 92px; /* فاصله زیرعنوان تا آیکون پایین */
+  --hero-bottom: 336px; /* فاصله هیرو تا بخش درباره من */
+
+  /* ---------- درباره من ---------- */
+  --about-image-width: 537.74px;
+  --about-image-height: 629.26px;
+  --about-paragraph-gap: 16px;
+  --about-text-media-gap: 32px;
+
+  /* ---------- نوشته‌ها ---------- */
+  --writing-image-width: 670px;
+  --writing-image-height: 355.77px;
+  --writing-card-gap: 200px;
+  --writing-title-link-gap: 16px;
+
+  /* ---------- نوارهای تیره (فیلم کوتاه / پادکست) ---------- */
+  --band-padding-y: 72px;
+  --film-video-width: 677px;
+  --film-video-height: 380.81px;
+  --film-title-subtitle-gap: 8px;
+  --film-title-year-gap: 8px;
+  --film-subtitle-platform-gap: 64px;
+  --platform-icon-gap: 16px;
+
+  /* ---------- تئاتر ---------- */
+  --theatre-poster-width: 448px;
+  --theatre-column-gap: 222px;
+  --theatre-card-gap: 200px; /* فاصله بین کارت‌های هر ستون */
+  --theatre-column-offset: 196px; /* اختلاف ارتفاع ستون راست با ستون چپ */
+
+  /* ---------- پادکست ---------- */
+  --podcast-cover-width: 448px;
+
+  /* ---------- رزومه: سه ستون ---------- */
+  --resume-column-gap: 64px;
+
+  /* ---------- اطلاعات تماس ---------- */
+  --contact-column-gap: 48px;
+
+  /* ---------- رزومه ---------- */
+  --resume-category-gap: 64px;
+  --resume-category-title-gap: 32px;
+  --resume-item-gap: 16px;
+  --resume-label-gap: 8px;
+  --resume-icon-gap: 16px;
+  --resume-group-gap: 32px;
+
+  /* ---------- افتخارات ---------- */
+  --award-image-width: 330.67px;
+  --award-gap: 64px;
+
+  /* ---------- انیمیشن و حرکت ---------- */
+  --motion-duration-instant: 120ms;
+  --motion-duration-fast: 220ms;
+  --motion-duration-base: 420ms;
+  --motion-duration-slow: 720ms;
+  --motion-ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --motion-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --hover-image-scale: 1.04; /* بزرگ‌نمایی ظریف تصویر در هاور */
+  --hover-text-scale: 1.03; /* بزرگ‌نمایی ظریف متن در هاور */
+  --hover-image-saturate: 1.12;
+
+  /* ---------- لایه‌ها (z-index) ---------- */
+  --z-base: 0;
+  --z-content: 1;
+  --z-header: 100;
+  --z-overlay-scrim: 190;
+  --z-overlay: 200;
+  --z-overlay-ui: 210;
+  --z-preloader: 300;
+  --z-skip-link: 400;
+}
+
+/* در این مرحله فقط مقیاس‌های خیلی بزرگ صفحه را نرم می‌کنیم.
+   دیزاین موبایل بعداً به‌صورت یک رفرنس جداگانه پیاده‌سازی می‌شود. */
+@media (max-width: 1439px) {
+  :root {
+    --page-gutter: 48px;
+  }
+}

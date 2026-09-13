@@ -1,0 +1,79 @@
+/* ============================================================
+   بخش تئاتر — چیدمان پله‌ای (masonry)
+   عرض پوستر ۴۴۸ — فاصله دو ستون ۲۲۲ — فاصله کارت‌ها ۲۰۰ —
+   ستون راست ۱۹۶ پیکسل پایین‌تر از ستون چپ شروع می‌شود (طبق دیزاین قبلی اعلام‌شده)
+   هر پوستر در قاب ۴۴۸ با ارتفاع ثابت ۶۳۲ نمایش داده می‌شود تا ردیف‌ها
+   منظم و مثل دیزاین هم‌اندازه باشند.
+   ============================================================ */
+
+.theatre__columns {
+  display: grid;
+  grid-template-columns: repeat(2, var(--theatre-poster-width));
+  justify-content: center;
+  column-gap: var(--theatre-column-gap);
+  align-items: start;
+}
+
+.theatre__column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--theatre-card-gap);
+}
+
+.theatre__column--right {
+  margin-block-start: var(--theatre-column-offset);
+}
+
+.theatre-card {
+  position: relative;
+  display: block;
+}
+
+.theatre-card__media {
+  width: var(--theatre-poster-width);
+  max-width: 100%;
+  aspect-ratio: 448 / 632;
+}
+
+/* کل کارت کلیک‌پذیر است؛ لینک اصلی عنوان کارت است */
+.theatre-card__trigger {
+  display: inline-block;
+}
+
+.theatre-card__trigger::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.theatre-card__caption {
+  margin-block-start: var(--space-md);
+}
+
+.theatre-card__headline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-sm);
+}
+
+.theatre-card__title {
+  font-size: var(--fs-card-subtitle);
+  line-height: var(--lh-card-subtitle);
+  font-weight: var(--fw-card-title);
+  letter-spacing: 0;
+}
+
+.theatre-card__year {
+  font-size: var(--fs-label);
+  line-height: var(--lh-label);
+  font-weight: var(--fw-regular);
+}
+
+.theatre-card__role {
+  margin-block-start: var(--space-xs);
+  font-size: var(--fs-label);
+  line-height: var(--lh-label);
+  font-weight: var(--fw-regular);
+  opacity: 0.8;
+}

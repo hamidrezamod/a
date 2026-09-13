@@ -1,0 +1,101 @@
+/* ============================================================
+   بخش نوشته‌ها
+   تصویر ۶۷۰×۳۵۵.۷۷ — فاصله کارت‌ها ۲۰۰، فاصله متن و تصویر ۳۲،
+   فاصله عنوان کارت تا زیرنویس ۱۶.
+   کارت اول: تصویر راست — کارت دوم: تصویر چپ — کارت سوم: تصویر راست
+   (طبق دیزاین، آرایش تصویرها متناوب است)
+   ============================================================ */
+
+.writings__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--writing-card-gap);
+}
+
+.writing-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--writing-image-width) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--about-text-media-gap);
+}
+
+.writing-card--media-right {
+  grid-template-columns: minmax(0, 1fr) var(--writing-image-width);
+}
+
+.writing-card--media-right .writing-card__media {
+  order: 2;
+}
+
+.writing-card--media-right .writing-card__body {
+  order: 1;
+}
+
+.writing-card__media {
+  width: var(--writing-image-width);
+  max-width: 100%;
+  aspect-ratio: 670 / 355.77;
+}
+
+.writing-card__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 360px;
+}
+
+.writing-card--media-right .writing-card__body {
+  justify-self: end;
+  text-align: right;
+}
+
+.writing-card__title {
+  font-size: var(--fs-card-subtitle);
+  line-height: var(--lh-card-subtitle);
+  font-weight: var(--fw-card-title);
+  letter-spacing: 0;
+}
+
+/* لینک اصلی کارت: کل کارت را کلیک‌پذیر می‌کند بدون به‌هم خوردن چیدمان */
+.writing-card__trigger {
+  display: inline-block;
+}
+
+.writing-card__trigger::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.writing-card__link {
+  display: block;
+  margin-block-start: var(--writing-title-link-gap);
+  font-size: var(--fs-button);
+  line-height: var(--lh-button);
+  font-weight: var(--fw-button);
+}
+
+.writing-card__link-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.1em;
+}
+
+/* ---------- هاور ظریف: تصویر کمی بزرگ‌تر و پررنگ‌تر، متن کمی بزرگ‌تر ---------- */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .writing-card__body {
+    transition: transform var(--motion-duration-base) var(--motion-ease-out);
+    transform-origin: left center;
+    will-change: transform;
+  }
+
+  .writing-card--media-right .writing-card__body {
+    transform-origin: right center;
+  }
+
+  .writing-card:hover .writing-card__body,
+  .writing-card:focus-within .writing-card__body {
+    transform: scale(var(--hover-text-scale));
+  }
+}

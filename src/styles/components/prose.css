@@ -1,0 +1,110 @@
+/* ============================================================
+   قالب متن مقاله (Article Detail)
+   چیدمان نهایی مقاله هنوز ارسال نشده؛ این استایل‌ها خنثی و تمیز هستند
+   و بعداً با دیزاین نهایی جایگزین/تکمیل می‌شوند.
+   ============================================================ */
+
+.prose {
+  max-width: 720px;
+}
+
+.prose > * + * {
+  margin-block-start: var(--space-md-sm);
+}
+
+.prose h1,
+.prose h2,
+.prose h3 {
+  margin-block-start: var(--space-lg);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--tracking-title);
+}
+
+.prose h1 {
+  font-size: var(--fs-section-title);
+  line-height: var(--lh-section-title);
+}
+
+.prose h2 {
+  font-size: var(--fs-card-title);
+  line-height: var(--lh-card-title);
+}
+
+.prose h3 {
+  font-size: var(--fs-body-large);
+  line-height: var(--lh-body-large);
+}
+
+.prose p,
+.prose li {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+.prose ul,
+.prose ol {
+  padding-inline-start: 1.2em;
+  list-style: disc;
+}
+
+.prose ol {
+  list-style: decimal;
+}
+
+.prose li + li {
+  margin-block-start: var(--space-xs);
+}
+
+.prose a {
+  border-block-end: 1px solid currentColor;
+}
+
+.prose blockquote {
+  padding-inline-start: var(--space-sm);
+  border-inline-start: 2px solid var(--color-line-soft);
+  font-style: italic;
+}
+
+.prose hr {
+  height: 1px;
+  margin-block: var(--space-lg);
+  border: 0;
+  background-color: var(--color-line-soft);
+}
+
+.prose img {
+  width: 100%;
+  height: auto;
+}
+
+.prose__figure {
+  margin-block: var(--space-md);
+}
+
+.prose__figure figcaption {
+  margin-block-start: var(--space-xs);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  opacity: 0.7;
+}
+
+/* ---------- متن فارسی (راست‌به‌چپ) ---------- */
+.prose--fa {
+  font-family: var(--font-fa);
+  direction: rtl;
+  text-align: right;
+  line-height: 1.9;
+}
+
+.prose--fa h1,
+.prose--fa h2,
+.prose--fa h3 {
+  letter-spacing: 0;
+}
+
+.prose--fa blockquote {
+  border-inline-start: 0;
+  border-inline-end: 2px solid var(--color-line-soft);
+  padding-inline-start: 0;
+  padding-inline-end: var(--space-sm);
+}

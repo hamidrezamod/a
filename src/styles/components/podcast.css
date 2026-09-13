@@ -1,0 +1,70 @@
+/* ============================================================
+   بخش پادکست (نوار تیره)
+   متن سمت چپ، تصویر ۴۴۸ سمت راست — مثل بخش فیلم کوتاه
+   ============================================================ */
+
+.podcast__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--podcast-cover-width);
+  align-items: center;
+  gap: var(--column-gap-wide);
+}
+
+.podcast__copy {
+  max-width: 460px;
+}
+
+.podcast__media {
+  width: var(--podcast-cover-width);
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  justify-self: end;
+}
+
+.podcast__title {
+  font-size: var(--fs-card-title);
+  line-height: var(--lh-card-title);
+  font-weight: var(--fw-card-title);
+  letter-spacing: var(--tracking-title);
+}
+
+.podcast__role {
+  margin-block-start: var(--film-title-subtitle-gap);
+  font-size: var(--fs-card-subtitle);
+  line-height: var(--lh-card-subtitle);
+  font-weight: var(--fw-card-subtitle);
+  opacity: 0.9;
+}
+
+.podcast__links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin-block-start: var(--space-lg);
+}
+
+.podcast__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--fs-button);
+  line-height: var(--lh-button);
+  font-weight: var(--fw-button);
+  transition: opacity var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.podcast__link:hover,
+.podcast__link:focus-visible {
+  opacity: 0.7;
+}
+
+/* لینکی که آدرسش هنوز وارد نشده: ظاهرش مثل بقیه است ولی لینک نیست */
+.podcast__link--pending {
+  cursor: default;
+}
+
+.podcast__link-icon {
+  width: 20px;
+  height: 20px;
+}
