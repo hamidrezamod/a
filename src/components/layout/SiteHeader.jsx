@@ -18,7 +18,7 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <nav className="page-shell site-header__inner" aria-label="Main navigation">
-        <ul className="site-nav__list">
+        <ul className="site-nav__list" role="list">
           {navigation.links.map((link) => (
             <li className="site-nav__item" key={link.id}>
               <a

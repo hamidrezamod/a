@@ -23,8 +23,11 @@
 
   /* ---------- تایپوگرافی: خانواده فونت ---------- */
   --font-display: 'Crimson Pro', 'Times New Roman', Georgia, serif;
-  /* فونت متن‌های فارسی (مقاله‌ها). بعد از دریافت فونت فارسی نهایی، این خط را عوض کن. */
-  --font-fa: 'Vazirmatn', 'IRANSansX', 'IRANSans', Tahoma, system-ui, sans-serif;
+  /* فونت متن‌های فارسی (مقاله‌ها).
+     «Portfolio Persian» نام فونت داخلی است؛ وقتی فایل فونت را در
+     src/assets/fonts/persian بگذاری، خودکار فعال می‌شود.
+     تا آن زمان از فونت‌های جانشین استفاده می‌شود. */
+  --font-fa: 'Portfolio Persian', 'Vazirmatn', 'IRANSansX', 'IRANSans', Tahoma, system-ui, sans-serif;
 
   /* ---------- تایپوگرافی: وزن‌ها ---------- */
   --fw-light: 300;

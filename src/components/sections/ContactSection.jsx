@@ -11,7 +11,7 @@ export function ContactSection() {
           {contact.title}
         </SectionHeading>
 
-        <ul className="section__content contact__grid">
+        <ul className="section__content contact__grid" role="list">
           {contact.items.map((item) => (
             <li className="contact__cell" key={item.id}>
               <ContactLink item={item} />

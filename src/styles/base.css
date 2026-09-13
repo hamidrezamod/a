@@ -12,8 +12,8 @@ html {
   background-color: var(--color-canvas);
   color-scheme: light;
   scroll-behavior: smooth;
-  /* فاصله امن هنگام اسکرول به بخش‌ها از طریق منو */
-  scroll-padding-top: var(--space-lg);
+  /* فاصله امن هنگام اسکرول به بخش‌ها از طریق منو (به اندازه منوی چسبان) */
+  scroll-padding-top: 88px;
   -webkit-text-size-adjust: 100%;
 }
 

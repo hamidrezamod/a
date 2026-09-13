@@ -50,7 +50,7 @@ function ExperienceCategory({ category }) {
         {category.title}
       </h3>
 
-      <ul className="resume-category__items">
+      <ul className="resume-category__items" role="list">
         {category.items.map((item) => (
           <li className="resume-item" key={item.id}>
             <p className="resume-item__text">{item.text}</p>

@@ -32,7 +32,7 @@ export function ShortFilmSection() {
             {film.role ? <p className="short-film__role">{film.role}</p> : null}
 
             {availablePlatforms.length ? (
-              <ul className="short-film__platforms">
+              <ul className="short-film__platforms" role="list">
                 {availablePlatforms.map((platform) => (
                   <li key={platform.id}>
                     <a

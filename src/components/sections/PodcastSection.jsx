@@ -3,7 +3,18 @@ import { MediaFrame } from '../media/MediaFrame.jsx';
 import { Icon } from '../ui/Icon.jsx';
 import { SectionHeading } from '../ui/SectionHeading.jsx';
 
-/** بخش پادکست */
+/** آیا این لینک آدرس واقعی دارد؟ */
+function hasRealHref(href) {
+  return typeof href === 'string' && /^(https?:|mailto:|tel:)/.test(href);
+}
+
+/**
+ * بخش پادکست (نوار تیره)
+ * متن سمت چپ، تصویر ۴۴۸ سمت راست.
+ * تا وقتی آدرس یکی از پلتفرم‌ها در فایل محتوا خالی باشد، همان مورد
+ * به‌صورت متنی (بدون لینک) نمایش داده می‌شود تا لینک بی‌مقصد ساخته نشود؛
+ * به‌محض وارد کردن آدرس، خودکار قابل کلیک می‌شود.
+ */
 export function PodcastSection() {
   const { episode } = podcastSection;
 
@@ -23,14 +34,23 @@ export function PodcastSection() {
             <h3 className="podcast__title">{episode.title}</h3>
             {episode.role ? <p className="podcast__role">{episode.role}</p> : null}
 
-            <div className="podcast__links">
+            <ul className="podcast__links" role="list">
               {episode.links.map((link) => (
-                <a className="podcast__link" href={link.href} key={link.id}>
-                  <Icon name={link.icon} className="podcast__link-icon" />
-                  <span>{link.label}</span>
-                </a>
+                <li key={link.id}>
+                  {hasRealHref(link.href) ? (
+                    <a className="podcast__link" href={link.href} target="_blank" rel="noreferrer">
+                      <Icon name={link.icon} className="podcast__link-icon" />
+                      <span>{link.label}</span>
+                    </a>
+                  ) : (
+                    <span className="podcast__link podcast__link--pending">
+                      <Icon name={link.icon} className="podcast__link-icon" />
+                      <span>{link.label}</span>
+                    </span>
+                  )}
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
           <MediaFrame

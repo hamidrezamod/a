@@ -16,7 +16,7 @@ export function WritingsSection() {
           {writingsSection.title}
         </SectionHeading>
 
-        <ul className="section__content writings__list">
+        <ul className="section__content writings__list" role="list">
           {articles.map((article) => (
             <li className="writings__item" key={article.id}>
               <WritingCard article={article} />

@@ -162,3 +162,34 @@ layout: standard
 
 کلاس‌های آماده در `src/styles/typography.css`: `.type-hero-title`، `.type-hero-subtitle`،
 `.type-section-title`، `.type-card-title`، `.type-card-subtitle`، `.type-label`، `.type-body`.
+
+
+---
+
+## ۱۱) جای خالی‌ها (چیزهایی که بعداً اضافه می‌شوند)
+
+### آیکون‌ها
+آیکون‌های SVG اصلی هنوز ارسال نشده‌اند و فعلاً نمونه‌های ساده جایشان هستند.
+برای جایگزینی، فایل SVG را با همان نام در `src/assets/icons/` بگذار.
+فهرست کامل نام‌ها داخل `src/assets/icons/README.md` نوشته شده است.
+
+### فونت فارسی
+فایل فونت را داخل `src/assets/fonts/persian/` بگذار؛ نام فایل باید وزن را داشته باشد:
+
+```text
+src/assets/fonts/persian/vazirmatn-400.woff2
+src/assets/fonts/persian/vazirmatn-500.woff2
+```
+
+سایت خودش فونت را فعال می‌کند. تا آن زمان متن‌های فارسی با فونت جانشین نمایش داده می‌شوند.
+
+### آدرس گوگل‌درایو فیلم کوتاه
+در `src/content/home/short-film.js` این خط را پر کن:
+
+```js
+{ id: 'google-drive', label: 'Watch on Google Drive', href: '', icon: 'google-drive' }
+```
+
+### لینک‌های پادکست
+در `src/content/home/podcast.js` آدرس دو مورد `castbox` و `instagram` را وارد کن.
+تا وقتی آدرس خالی باشد، متن نمایش داده می‌شود ولی لینک نیست (تا کاربر روی لینک خالی کلیک نکند).
