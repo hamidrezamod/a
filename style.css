@@ -1,0 +1,643 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&display=swap');
+
+:root {
+  --canvas: #f7f4ef;
+  --ink: #413f3e;
+  --muted-ink: #716d68;
+  --content-width: 1120px;
+  --section-gap: 320px;
+  --body-size: 20px;
+  --body-leading: 31px;
+  --section-title: 64px;
+  --card-title: 40px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--canvas);
+}
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: var(--body-size);
+  line-height: var(--body-leading);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.68;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.page-shell {
+  width: min(var(--content-width), calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 120px;
+  padding-bottom: 336px;
+  text-align: center;
+}
+
+.hero__portrait {
+  width: 348px;
+  max-width: 100%;
+}
+
+.hero h1 {
+  max-width: 100%;
+  margin: 16px 0 0;
+  font-size: 128px;
+  line-height: 150px;
+  white-space: nowrap;
+}
+
+.hero__subtitle {
+  margin: 16px 0 0;
+  font-size: 34px;
+  line-height: 38px;
+}
+
+.scroll-cue {
+  display: grid;
+  width: 42px;
+  height: 48px;
+  margin-top: 92px;
+  place-items: center;
+}
+
+.scroll-cue__glyph,
+.scroll-cue__glyph::after {
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-right: 3px solid var(--ink);
+  border-bottom: 3px solid var(--ink);
+  transform: rotate(45deg);
+}
+
+.scroll-cue__glyph::after {
+  content: '';
+  position: relative;
+  top: -10px;
+  left: -8px;
+}
+
+.section-title {
+  margin: 0;
+  font-size: var(--section-title);
+  line-height: 69px;
+  font-weight: 600;
+}
+
+.section-title--right {
+  text-align: right;
+}
+
+.section-title--center {
+  text-align: center;
+}
+
+.section-title--light {
+  color: var(--canvas);
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 537.74px;
+  gap: 32px;
+  align-items: start;
+  margin-top: 160px;
+}
+
+.about__copy {
+  max-width: 550px;
+}
+
+.about__copy p {
+  margin: 0;
+}
+
+.about__copy p + p {
+  margin-top: 16px;
+}
+
+.writings,
+.theatre,
+.resume,
+.awards,
+.contact {
+  margin-top: var(--section-gap);
+}
+
+.writings__list {
+  display: flex;
+  flex-direction: column;
+  gap: 200px;
+  margin-top: 160px;
+}
+
+.writing-card {
+  display: grid;
+  grid-template-columns: 670px minmax(0, 1fr);
+  gap: 32px;
+  align-items: center;
+}
+
+.writing-card--media-right .writing-card__media {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.writing-card--media-right .writing-card__content {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.writing-card__content h3 {
+  margin: 0;
+  font-size: var(--card-title);
+  line-height: 44px;
+}
+
+.text-link {
+  margin: 16px 0 0;
+  font-size: 19px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.dark-band {
+  color: var(--canvas);
+  background: var(--ink);
+}
+
+.short-film,
+.podcast {
+  margin-top: var(--section-gap);
+  padding: 72px 0;
+}
+
+.short-film__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 677px;
+  gap: 32px;
+  align-items: center;
+  margin-top: 160px;
+}
+
+.feature-copy h3 {
+  max-width: 510px;
+  margin: 0;
+  font-size: var(--card-title);
+  line-height: 44px;
+}
+
+.feature-copy > p {
+  margin: 8px 0 0;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.feature-year {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 400;
+}
+
+.watch-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 64px;
+}
+
+.icon-link {
+  display: inline-grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.theatre__grid {
+  display: grid;
+  grid-template-columns: 448px 448px;
+  column-gap: 222px;
+  row-gap: 160px;
+  margin-top: 160px;
+}
+
+.theatre-card__caption {
+  margin-top: 32px;
+}
+
+.theatre-card__caption h3 {
+  display: inline;
+  margin: 0;
+  font-size: var(--card-title);
+  line-height: 44px;
+}
+
+.theatre-card__year {
+  margin-left: 16px;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.theatre-card__caption p {
+  margin: 8px 0 0;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.podcast__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 448px;
+  gap: 32px;
+  align-items: center;
+  margin-top: 160px;
+}
+
+.podcast-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  margin-top: 64px;
+}
+
+.resume__content {
+  margin-top: 160px;
+}
+
+.resume-block + .resume-block {
+  margin-top: 64px;
+}
+
+.resume-block h3 {
+  margin: 0 0 32px;
+  font-size: 40px;
+  line-height: 44px;
+}
+
+.education-entry + .education-entry {
+  margin-top: 16px;
+}
+
+.education-entry p {
+  margin: 0;
+}
+
+.education-entry small {
+  display: block;
+  margin-top: 8px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.experience-list {
+  max-width: 900px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.experience-list li + li {
+  margin-top: 16px;
+}
+
+.software-groups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.software-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.software-icons {
+  font-size: 17px;
+  letter-spacing: 2px;
+}
+
+.awards__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 64px;
+  row-gap: 64px;
+  margin-top: 160px;
+}
+
+.award-card {
+  margin: 0;
+}
+
+.contact {
+  padding-bottom: 160px;
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 48px;
+  row-gap: 16px;
+  margin-top: 160px;
+}
+
+.site-footer {
+  padding: 16px 24px 20px;
+  color: var(--canvas);
+  background: var(--ink);
+  text-align: center;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.media-slot {
+  position: relative;
+  display: grid;
+  width: 100%;
+  aspect-ratio: var(--ratio);
+  overflow: hidden;
+  place-items: center;
+  border: 1px solid rgba(65, 63, 62, 0.24);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.36), transparent 44%),
+    repeating-linear-gradient(135deg, rgba(65, 63, 62, 0.06) 0 1px, transparent 1px 12px),
+    #ded9d1;
+}
+
+.dark-band .media-slot {
+  border-color: rgba(247, 244, 239, 0.35);
+  background:
+    linear-gradient(135deg, rgba(247, 244, 239, 0.18), transparent 44%),
+    repeating-linear-gradient(135deg, rgba(247, 244, 239, 0.12) 0 1px, transparent 1px 12px),
+    #625f5c;
+}
+
+.media-slot img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  filter: grayscale(0.72);
+}
+
+.media-slot.has-image img {
+  opacity: 1;
+}
+
+.media-fallback {
+  position: absolute;
+  right: 16px;
+  bottom: 12px;
+  left: 16px;
+  color: currentColor;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  opacity: 0.75;
+  text-align: right;
+}
+
+.media-slot.has-image .media-fallback {
+  opacity: 0;
+}
+
+.media-slot::before,
+.media-slot::after {
+  position: absolute;
+  z-index: 1;
+  width: 42px;
+  height: 1px;
+  background: currentColor;
+  content: '';
+  opacity: 0.42;
+}
+
+.media-slot::before {
+  transform: rotate(45deg);
+}
+
+.media-slot::after {
+  transform: rotate(-45deg);
+}
+
+.media-slot.has-image::before,
+.media-slot.has-image::after {
+  opacity: 0;
+}
+
+.site-footer + * {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --section-title: clamp(48px, 5.35vw, 64px);
+    --card-title: clamp(32px, 3.4vw, 40px);
+  }
+
+  .hero h1 {
+    font-size: clamp(64px, 8.9vw, 128px);
+    line-height: 1.12;
+    white-space: normal;
+  }
+
+  .short-film__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 60.45%);
+  }
+
+  .theatre__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 32px;
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --section-gap: 180px;
+    --body-size: 18px;
+    --body-leading: 28px;
+  }
+
+  .page-shell {
+    width: min(100% - 40px, var(--content-width));
+  }
+
+  .hero {
+    padding-top: 72px;
+    padding-bottom: 180px;
+  }
+
+  .hero__portrait {
+    width: min(348px, 72vw);
+  }
+
+  .hero__subtitle {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .about__grid,
+  .writing-card,
+  .short-film__grid,
+  .podcast__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about__grid,
+  .writings__list,
+  .short-film__grid,
+  .theatre__grid,
+  .podcast__grid,
+  .resume__content,
+  .awards__grid,
+  .contact__grid {
+    margin-top: 96px;
+  }
+
+  .about__grid {
+    gap: 48px;
+  }
+
+  .writing-card--media-right .writing-card__media,
+  .writing-card--media-right .writing-card__content {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .writing-card--media-right .writing-card__content {
+    order: 2;
+  }
+
+  .writing-card--media-right .writing-card__media {
+    order: 1;
+  }
+
+  .short-film,
+  .podcast {
+    padding: 56px 0;
+  }
+
+  .theatre__grid {
+    grid-template-columns: 1fr;
+    row-gap: 96px;
+  }
+
+  .theatre-card .media-slot {
+    max-width: 448px;
+  }
+
+  .awards__grid,
+  .contact__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+  }
+
+  .software-groups {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .page-shell {
+    width: calc(100% - 32px);
+  }
+
+  .hero {
+    padding-top: 48px;
+    padding-bottom: 140px;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 13vw, 72px);
+  }
+
+  .hero__subtitle {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .section-title {
+    font-size: 48px;
+    line-height: 54px;
+  }
+
+  .section-title--right {
+    text-align: left;
+  }
+
+  .writing-card__content h3,
+  .feature-copy h3,
+  .theatre-card__caption h3,
+  .resume-block h3 {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .theatre-card__year,
+  .theatre-card__caption p,
+  .feature-copy > p {
+    font-size: 21px;
+    line-height: 30px;
+  }
+
+  .awards__grid,
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+}
