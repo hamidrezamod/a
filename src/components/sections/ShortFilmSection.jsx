@@ -30,19 +30,6 @@ export function ShortFilmSection() {
             <h3 className="short-film__title">{film.title}</h3>
             {film.year ? <p className="short-film__year">{film.year}</p> : null}
             {film.role ? <p className="short-film__role">{film.role}</p> : null}
-          </div>
-
-          <div className="short-film__player">
-            <div className="short-film__video">
-              <VimeoEmbed
-                videoId={film.vimeo.videoId}
-                title={film.vimeo.title}
-                poster={film.poster}
-                posterAlt={film.posterAlt}
-                pageUrl={film.vimeo.pageUrl}
-                playLabel={`Play: ${film.title}`}
-              />
-            </div>
 
             {availablePlatforms.length ? (
               <ul className="short-film__platforms">
@@ -62,6 +49,19 @@ export function ShortFilmSection() {
                 ))}
               </ul>
             ) : null}
+          </div>
+
+          <div className="short-film__player">
+            <div className="short-film__video">
+              <VimeoEmbed
+                videoId={film.vimeo.videoId}
+                title={film.vimeo.title}
+                poster={film.poster}
+                posterAlt={film.posterAlt}
+                pageUrl={film.vimeo.pageUrl}
+                playLabel={`Play: ${film.title}`}
+              />
+            </div>
           </div>
         </div>
       </div>

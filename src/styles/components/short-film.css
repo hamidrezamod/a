@@ -17,12 +17,11 @@
   max-width: 420px;
 }
 
-/* بخش پلیر در سمت راست: قاب ویدیو + ردیف آیکون‌ها */
+/* قاب پلیر سمت راست (۶۷۷×۳۸۰.۸۱) */
 .short-film__player {
-  display: flex;
-  flex-direction: column;
   width: var(--film-video-width);
   max-width: 100%;
+  justify-self: end;
 }
 
 .short-film__video {
@@ -51,11 +50,12 @@
   opacity: 0.9;
 }
 
+/* ردیف آیکون‌ها زیر متن سمت چپ (فاصله از زیرنویس ۶۴ پیکسل طبق مشخصات) */
 .short-film__platforms {
   display: flex;
   align-items: center;
   gap: var(--platform-icon-gap);
-  margin-block-start: var(--space-md);
+  margin-block-start: var(--film-subtitle-platform-gap);
 }
 
 .short-film__platform {

@@ -1,27 +1,24 @@
 /* ============================================================
-   بخش پادکست (نوار تیره) — عنوان بخش گوشه راست صفحه،
-   متن سمت راست، تصویر ۴۴۸ سمت چپ (طبق دیزاین)
+   بخش پادکست (نوار تیره)
+   متن سمت چپ، تصویر ۴۴۸ سمت راست — مثل بخش فیلم کوتاه
    ============================================================ */
 
 .podcast__grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) var(--podcast-cover-width);
-  grid-template-areas: 'copy media';
   align-items: center;
-  gap: var(--about-text-media-gap);
+  gap: var(--column-gap-wide);
 }
 
 .podcast__copy {
-  grid-area: copy;
   max-width: 460px;
-  text-align: right;
 }
 
 .podcast__media {
-  grid-area: media;
   width: var(--podcast-cover-width);
   max-width: 100%;
   aspect-ratio: 1 / 1;
+  justify-self: end;
 }
 
 .podcast__title {
@@ -42,7 +39,7 @@
 .podcast__links {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: var(--space-sm);
   margin-block-start: var(--space-lg);
 }
