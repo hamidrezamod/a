@@ -1,4 +1,4 @@
-import { SiteHeader } from './SiteHeader.jsx';
+import { SiteMenu } from './SiteMenu.jsx';
 import { SiteFooter } from './SiteFooter.jsx';
 import { HeroSection } from '../sections/HeroSection.jsx';
 import { AboutSection } from '../sections/AboutSection.jsx';
@@ -16,26 +16,18 @@ import { useDetailOverlay } from '../../hooks/useDetailOverlay.js';
  * ترتیب بخش‌ها دقیقاً همان ترتیب دیزاین دسکتاپ است.
  * وقتی پاپ‌آپ جزئیات باز می‌شود، این پوسته از دسترس خارج (inert) می‌شود
  * تا فوکوس و صفحه‌خوان وارد پس‌زمینه نشوند.
+ *
+ * منو (SiteMenu) پایین و وسط صفحه شناور است و در جریان صفحه
+ * فضایی اشغال نمی‌کند؛ به همین دلیل دیگر به offset نیازی نیست.
  */
 export function PageShell() {
   const { isOpen } = useDetailOverlay();
 
-  // منو چسبان است و در جریان صفحه فضای خودش را می‌گیرد؛
-  // این offset اجازه می‌دهد فاصله «۱۲۰ پیکسل از بالای صفحه تا هیرو»
-  // دقیقاً مثل دیزاین حفظ شود.
-  const headerOffset = 0;
-
   return (
-    <div
-      className="site"
-      style={{ '--header-offset': `${headerOffset}px` }}
-      inert={isOpen ? true : undefined}
-    >
+    <div className="site" inert={isOpen ? true : undefined}>
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-
-      <SiteHeader />
 
       <main id="main">
         <HeroSection />
@@ -50,6 +42,8 @@ export function PageShell() {
       </main>
 
       <SiteFooter />
+
+      <SiteMenu />
     </div>
   );
 }

@@ -12,8 +12,10 @@ html {
   background-color: var(--color-canvas);
   color-scheme: light;
   scroll-behavior: smooth;
-  /* فاصله امن هنگام اسکرول به بخش‌ها از طریق منو (به اندازه منوی چسبان) */
-  scroll-padding-top: 88px;
+  /* فاصله امن هنگام اسکرول به بخش‌ها از طریق منو.
+     منو پایین صفحه شناور است، پس فضای امن اصلی پایین صفحه است. */
+  scroll-padding-top: 24px;
+  scroll-padding-bottom: calc(var(--nav-dock-inset) + var(--nav-height) + 24px);
   -webkit-text-size-adjust: 100%;
 }
 

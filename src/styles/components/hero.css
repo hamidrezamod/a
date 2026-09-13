@@ -6,8 +6,8 @@
    ============================================================ */
 
 .hero {
-  /* ۱۲۰ پیکسل فاصله از بالای قاب صفحه؛ منوی چسبان روی آن قرار می‌گیرد */
-  padding-block-start: calc(var(--hero-top) - var(--header-offset, 0px));
+  /* ۱۲۰ پیکسل فاصله از بالای قاب صفحه (منو پایین صفحه شناور است) */
+  padding-block-start: var(--hero-top);
   padding-block-end: var(--hero-bottom);
   text-align: center;
 }

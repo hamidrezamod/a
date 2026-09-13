@@ -1,0 +1,175 @@
+/* ============================================================
+   منوی شناور پایین صفحه (Bottom Dock Menu)
+   ------------------------------------------------------------
+   نوار ثابت، وسط‌چین و چسبان به پایین صفحه؛ با اسکرول همان‌جا
+   پایین و وسط باقی می‌ماند و کل عرض صفحه را نمی‌گیرد.
+   گروه «Works» باز و بسته می‌شود و پنلش بالای نوار ظاهر می‌شود.
+   ============================================================ */
+
+.site-menu {
+  position: fixed;
+  inset-block-end: var(--nav-dock-inset);
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-nav);
+  width: var(--nav-width);
+  max-width: calc(100vw - var(--space-md));
+}
+
+/* ---------- نوار اصلی ---------- */
+.site-menu__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--nav-item-gap);
+  min-height: var(--nav-height);
+  padding-inline: var(--nav-padding-x);
+  background-color: var(--color-nav-surface);
+  color: var(--color-nav-text);
+  border-radius: var(--nav-radius);
+  box-shadow: var(--nav-shadow);
+}
+
+.site-menu__item {
+  display: flex;
+  align-items: center;
+}
+
+/* ---------- لینک‌ها و دکمه «Works» ---------- */
+.site-menu__link,
+.site-menu__toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 2px;
+  font-family: inherit;
+  font-size: var(--fs-nav);
+  line-height: var(--lh-nav);
+  font-weight: var(--fw-nav);
+  letter-spacing: 0.01em;
+  color: inherit;
+  white-space: nowrap;
+  opacity: 0.72;
+  transition: opacity var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.site-menu__link:hover,
+.site-menu__link:focus-visible,
+.site-menu__toggle:hover,
+.site-menu__toggle:focus-visible {
+  opacity: 1;
+}
+
+/* بخش فعال با یک خط ظریف زیرش مشخص می‌شود */
+.site-menu__link.is-active,
+.site-menu__toggle.is-active {
+  opacity: 1;
+}
+
+.site-menu__link.is-active::after,
+.site-menu__toggle.is-active::after {
+  content: '';
+  position: absolute;
+  inset-inline: 2px;
+  inset-block-end: 2px;
+  height: 1.5px;
+  border-radius: 2px;
+  background-color: currentColor;
+  opacity: 0.6;
+}
+
+/* فوکوس روی سطح تیره باید دیده شود */
+.site-menu :focus-visible {
+  outline-color: var(--color-nav-text);
+  outline-offset: 3px;
+}
+
+/* ---------- فلش «Works» ---------- */
+.site-menu__chevron {
+  opacity: 0.8;
+  transition: transform var(--motion-duration-base) var(--motion-ease-out);
+}
+
+.site-menu__toggle[aria-expanded='true'] .site-menu__chevron {
+  transform: rotate(180deg);
+}
+
+/* ---------- پنل زیرمجموعه‌های «Works» ---------- */
+.site-menu__panel {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: calc(100% + var(--nav-panel-gap));
+  padding: 10px;
+  background-color: var(--color-nav-surface);
+  color: var(--color-nav-text);
+  border-radius: var(--nav-panel-radius);
+  box-shadow: var(--nav-shadow);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px) scale(0.985);
+  transform-origin: 50% 100%;
+  transition:
+    opacity var(--motion-duration-fast) var(--motion-ease-out),
+    transform var(--motion-duration-base) var(--motion-ease-out),
+    visibility 0s linear var(--motion-duration-fast);
+}
+
+.site-menu__panel.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  transition:
+    opacity var(--motion-duration-fast) var(--motion-ease-out),
+    transform var(--motion-duration-base) var(--motion-ease-out),
+    visibility 0s;
+}
+
+.site-menu__panel-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.site-menu__panel-link {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: var(--nav-panel-item-radius);
+  font-size: var(--fs-nav);
+  line-height: var(--lh-nav);
+  font-weight: var(--fw-nav);
+  letter-spacing: 0.01em;
+  color: inherit;
+  opacity: 0.78;
+  transition:
+    background-color var(--motion-duration-fast) var(--motion-ease-out),
+    opacity var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.site-menu__panel-link:hover,
+.site-menu__panel-link:focus-visible {
+  background-color: var(--color-nav-hover);
+  opacity: 1;
+}
+
+.site-menu__panel-link.is-active {
+  background-color: var(--color-nav-hover);
+  opacity: 1;
+}
+
+/* ---------- صفحه‌های باریک‌تر ---------- */
+@media (max-width: 560px) {
+  :root {
+    --nav-height: 56px;
+    --nav-padding-x: 18px;
+    --nav-dock-inset: 16px;
+    --nav-panel-radius: 20px;
+  }
+
+  .site-menu__link,
+  .site-menu__toggle,
+  .site-menu__panel-link {
+    font-size: 16px;
+  }
+}

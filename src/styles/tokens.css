@@ -14,6 +14,11 @@
   --color-surface-dark-text: var(--color-canvas);
 
   /* رنگ‌های کمکی (فقط برای حالت‌های خالی/جای‌نگهدار تصویر) */
+  /* سطح منوی شناور پایین صفحه — کمی تیره‌تر از رنگ تیره اصلی (#413F3E) */
+  --color-nav-surface: #2F2E2D;
+  --color-nav-text: var(--color-canvas);
+  --color-nav-hover: rgba(247, 244, 239, 0.1);
+
   --color-placeholder: #E9E4DB;
   --color-placeholder-dark: #56544F;
   --color-line-soft: rgba(65, 63, 62, 0.16);
@@ -99,6 +104,21 @@
   --font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
   --tracking-title: -0.02em;
   --tracking-none: 0;
+
+  /* ---------- منوی شناور پایین صفحه (Bottom Dock) ---------- */
+  --nav-width: 443px; /* عرض کلی منو — تمام عرض صفحه را نمی‌گیرد */
+  --nav-height: 64px;
+  --nav-radius: 999px;
+  --nav-padding-x: 26px;
+  --nav-item-gap: 8px;
+  --nav-dock-inset: 32px; /* فاصله منو تا لبه پایین صفحه */
+  --nav-panel-gap: 12px; /* فاصله پنل «Works» تا نوار منو */
+  --nav-panel-radius: 26px;
+  --nav-panel-item-radius: 16px;
+  /* سایه پشت منو تا از پس‌زمینه جدا شود */
+  --nav-shadow:
+    0 18px 40px -14px rgba(23, 22, 21, 0.5),
+    0 6px 16px -6px rgba(23, 22, 21, 0.32);
 
   /* ---------- ابعاد صفحه ---------- */
   --frame-width: 1440px; /* قاب کلی دیزاین دسکتاپ */
@@ -195,7 +215,7 @@
   /* ---------- لایه‌ها (z-index) ---------- */
   --z-base: 0;
   --z-content: 1;
-  --z-header: 100;
+  --z-nav: 120; /* منوی شناور پایین صفحه */
   --z-overlay-scrim: 190;
   --z-overlay: 200;
   --z-overlay-ui: 210;
