@@ -1,0 +1,40 @@
+token length: 45
+nodes to render: 69
+batch @0 rate limited, sleeping 15s (attempt 1)
+batch @0 rate limited, sleeping 30s (attempt 2)
+batch @0 rate limited, sleeping 45s (attempt 3)
+batch @0 rate limited, sleeping 60s (attempt 4)
+batch @0 rate limited, sleeping 75s (attempt 5)
+batch @0 rate limited, sleeping 90s (attempt 6)
+batch @0 rate limited, sleeping 105s (attempt 7)
+batch @0 rate limited, sleeping 120s (attempt 8)
+batch @0 rate limited, sleeping 135s (attempt 9)
+batch @0 rate limited, sleeping 150s (attempt 10)
+batch @0 http=429 ids=25
+resp: {"status":429,"err":"Rate limit exceeded"}
+batch @25 rate limited, sleeping 15s (attempt 1)
+batch @25 rate limited, sleeping 30s (attempt 2)
+batch @25 rate limited, sleeping 45s (attempt 3)
+batch @25 rate limited, sleeping 60s (attempt 4)
+batch @25 rate limited, sleeping 75s (attempt 5)
+batch @25 rate limited, sleeping 90s (attempt 6)
+batch @25 rate limited, sleeping 105s (attempt 7)
+batch @25 rate limited, sleeping 120s (attempt 8)
+batch @25 rate limited, sleeping 135s (attempt 9)
+batch @25 rate limited, sleeping 150s (attempt 10)
+batch @25 http=429 ids=25
+resp: {"status":429,"err":"Rate limit exceeded"}
+batch @50 rate limited, sleeping 15s (attempt 1)
+batch @50 rate limited, sleeping 30s (attempt 2)
+batch @50 rate limited, sleeping 45s (attempt 3)
+batch @50 rate limited, sleeping 60s (attempt 4)
+batch @50 rate limited, sleeping 75s (attempt 5)
+batch @50 rate limited, sleeping 90s (attempt 6)
+batch @50 rate limited, sleeping 105s (attempt 7)
+batch @50 rate limited, sleeping 120s (attempt 8)
+batch @50 rate limited, sleeping 135s (attempt 9)
+batch @50 rate limited, sleeping 150s (attempt 10)
+batch @50 http=429 ids=19
+resp: {"status":429,"err":"Rate limit exceeded"}
+rendered files: 0
+4.0K	out/renders

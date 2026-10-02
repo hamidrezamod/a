@@ -1,0 +1,42 @@
+{
+ "colors": {
+  "rgba(0,0,0,1)": 231,
+  "rgba(255,255,255,1)": 111,
+  "rgba(42,42,40,1)": 51,
+  "rgba(76,77,89,1)": 44,
+  "rgba(232,225,183,1)": 11,
+  "rgba(240,240,240,1)": 9,
+  "rgba(108,142,201,1)": 9,
+  "rgba(220,235,246,1)": 8,
+  "rgba(221,229,182,1)": 5,
+  "rgba(224,200,85,1)": 5,
+  "rgba(128,155,206,1)": 4,
+  "rgba(173,193,120,1)": 4,
+  "rgba(68,68,68,1)": 2,
+  "rgba(253,255,182,1)": 1,
+  "rgba(208,244,222,1)": 1,
+  "rgba(240,234,210,1)": 1,
+  "rgba(235,218,109,1)": 1,
+  "rgba(109,135,67,1)": 1,
+  "rgba(211,232,251,1)": 1,
+  "rgba(58,115,119,1)": 1,
+  "rgba(148,183,209,1)": 1,
+  "rgba(205,240,244,1)": 1,
+  "rgba(151,145,145,1)": 1
+ },
+ "fonts": {
+  "Manrope / Manrope-Medium / size 15.0 / lh 21.0 / ls 0.0": 89,
+  "Manrope / Manrope-Regular / size 18.0 / lh 28.80000114440918 / ls 0.0": 78,
+  "Manrope / 400 / size 14.0 / lh 22.399999618530273 / ls 0.0": 40,
+  "Manrope / Manrope-Medium / size 50.0 / lh 68.30000305175781 / ls 0.0": 32,
+  "Manrope / Manrope-Medium / size 20.0 / lh 28.0 / ls 0.0": 14,
+  "Manrope / Manrope-Medium / size 30.0 / lh 40.980003356933594 / ls 0.0": 11,
+  "Manrope / Manrope-Regular / size 55.0 / lh 60.5 / ls 0.0": 8,
+  "Manrope / Manrope-Bold / size 8.0 / lh 10.928000450134277 / ls 0.0": 8,
+  "Manrope / Manrope-Medium / size 24.0 / lh 33.599998474121094 / ls 0.0": 5,
+  "Manrope / Manrope-SemiBold / size 18.0 / lh 28.80000114440918 / ls 0.0": 2,
+  "Manrope / Manrope-Bold / size 18.0 / lh 28.80000114440918 / ls 0.0": 1,
+  "Vazirmatn / Vazirmatn-Bold / size 48.0 / lh 77.76000213623047 / ls -0.96": 1
+ },
+ "effects": {}
+}
