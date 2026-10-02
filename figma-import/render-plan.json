@@ -1,0 +1,416 @@
+[
+ {
+  "id": "161:14107",
+  "name": "Portfolio__Rectangle1",
+  "w": 452.5799865722656,
+  "h": 68.76000213623047
+ },
+ {
+  "id": "161:14108",
+  "name": "Portfolio__Rectangle2",
+  "w": 156.8699951171875,
+  "h": 65.76000213623047
+ },
+ {
+  "id": "161:14109",
+  "name": "Portfolio__Container",
+  "w": 1440.0,
+  "h": 603.4956665039062
+ },
+ {
+  "id": "161:14112",
+  "name": "Portfolio__Container",
+  "w": 1440.0,
+  "h": 1764.0
+ },
+ {
+  "id": "161:14121",
+  "name": "Portfolio__Container",
+  "w": 1440.0,
+  "h": 2437.0
+ },
+ {
+  "id": "161:14131",
+  "name": "Portfolio__Frame__Frame__Content",
+  "w": 719.0,
+  "h": 68.0
+ },
+ {
+  "id": "161:14134",
+  "name": "Portfolio__Frame__Frame__Frame__Frame",
+  "w": 1312.0,
+  "h": 280.0
+ },
+ {
+  "id": "161:14141",
+  "name": "Portfolio__Frame__Frame__Frame__Frame",
+  "w": 1312.0,
+  "h": 1927.47216796875
+ },
+ {
+  "id": "161:14207",
+  "name": "Portfolio__Frame__Frame__Frame__Frame",
+  "w": 1312.0,
+  "h": 743.0
+ },
+ {
+  "id": "161:14213",
+  "name": "Portfolio__Frame__Frame__Frame__Frame",
+  "w": 1312.0,
+  "h": 582.109375
+ },
+ {
+  "id": "161:14242",
+  "name": "Portfolio__Frame__Frame__Frame__Frame",
+  "w": 1312.0,
+  "h": 733.0
+ },
+ {
+  "id": "161:14258",
+  "name": "Portfolio__Frame__Frame__Frame__Frame",
+  "w": 1312.0,
+  "h": 891.0546875
+ },
+ {
+  "id": "161:14269",
+  "name": "Portfolio__Frame296",
+  "w": 1440.0,
+  "h": 1962.88427734375
+ },
+ {
+  "id": "161:14334",
+  "name": "Portfolio__IconsContainer",
+  "w": 1440.0,
+  "h": 460.8291015625
+ },
+ {
+  "id": "161:14347",
+  "name": "Portfolio__Container",
+  "w": 1440.0,
+  "h": 241.35470581054688
+ },
+ {
+  "id": "161:14365",
+  "name": "Portfolio__Navbar",
+  "w": 1440.0,
+  "h": 102.0
+ },
+ {
+  "id": "161:14377",
+  "name": "Windows-Control-Center-Concept__frame",
+  "w": 1440.0,
+  "h": 406.0
+ },
+ {
+  "id": "161:14404",
+  "name": "Windows-Control-Center-Concept__Navbar",
+  "w": 1440.0,
+  "h": 102.0
+ },
+ {
+  "id": "161:14416",
+  "name": "Windows-Control-Center-Concept__Frame290__Frame251",
+  "w": 1312.0,
+  "h": 1073.0
+ },
+ {
+  "id": "161:14448",
+  "name": "Windows-Control-Center-Concept__Frame290__Frame252",
+  "w": 1312.0,
+  "h": 899.0
+ },
+ {
+  "id": "161:14532",
+  "name": "Windows-Control-Center-Concept__Frame290__Frame253",
+  "w": 1312.0,
+  "h": 1102.0
+ },
+ {
+  "id": "161:14560",
+  "name": "Windows-Control-Center-Concept__Frame290__Frame254",
+  "w": 1312.0,
+  "h": 906.0
+ },
+ {
+  "id": "161:14634",
+  "name": "Windows-Control-Center-Concept__Frame290__Frame255",
+  "w": 1312.0,
+  "h": 899.0
+ },
+ {
+  "id": "161:14771",
+  "name": "Windows-Control-Center-Concept__Frame290__Frame256",
+  "w": 1312.0,
+  "h": 3296.0
+ },
+ {
+  "id": "161:15408",
+  "name": "Windows-Control-Center-Concept__Frame290__Frame250",
+  "w": 1094.0,
+  "h": 303.0
+ },
+ {
+  "id": "161:15411",
+  "name": "Windows-Control-Center-Concept__Frame292",
+  "w": 1440.0,
+  "h": 981.0
+ },
+ {
+  "id": "161:15416",
+  "name": "Windows-Control-Center-Concept__Container",
+  "w": 1440.0,
+  "h": 241.35470581054688
+ },
+ {
+  "id": "161:15435",
+  "name": "Torob-PLP-Redesign__Frame245",
+  "w": 1440.0,
+  "h": 406.0
+ },
+ {
+  "id": "161:15462",
+  "name": "Torob-PLP-Redesign__Navbar",
+  "w": 1440.0,
+  "h": 102.0
+ },
+ {
+  "id": "161:15474",
+  "name": "Torob-PLP-Redesign__Frame289__Frame259",
+  "w": 1312.0,
+  "h": 986.0
+ },
+ {
+  "id": "161:15487",
+  "name": "Torob-PLP-Redesign__Frame289__Frame261",
+  "w": 1312.0,
+  "h": 899.0
+ },
+ {
+  "id": "161:15509",
+  "name": "Torob-PLP-Redesign__Frame289__Frame263",
+  "w": 1312.0,
+  "h": 928.0
+ },
+ {
+  "id": "161:15544",
+  "name": "Torob-PLP-Redesign__Frame289__Frame265",
+  "w": 1312.0,
+  "h": 928.0
+ },
+ {
+  "id": "161:15580",
+  "name": "Torob-PLP-Redesign__Frame289__Frame267",
+  "w": 1312.0,
+  "h": 1044.0
+ },
+ {
+  "id": "161:15599",
+  "name": "Torob-PLP-Redesign__Frame289__Frame269",
+  "w": 1312.0,
+  "h": 928.0
+ },
+ {
+  "id": "161:15740",
+  "name": "Torob-PLP-Redesign__Frame289__Frame271",
+  "w": 1312.0,
+  "h": 957.0
+ },
+ {
+  "id": "164:3084",
+  "name": "Torob-PLP-Redesign__Frame289__torob-077",
+  "w": 1312.0,
+  "h": 738.0
+ },
+ {
+  "id": "161:15951",
+  "name": "Torob-PLP-Redesign__Frame289__Frame270",
+  "w": 1312.0,
+  "h": 303.0
+ },
+ {
+  "id": "161:15954",
+  "name": "Torob-PLP-Redesign__Frame289__Frame272",
+  "w": 1312.0,
+  "h": 838.0
+ },
+ {
+  "id": "161:16157",
+  "name": "Torob-PLP-Redesign__Frame292",
+  "w": 1440.0,
+  "h": 981.0
+ },
+ {
+  "id": "161:16163",
+  "name": "Torob-PLP-Redesign__Container",
+  "w": 1440.0,
+  "h": 241.35470581054688
+ },
+ {
+  "id": "161:16182",
+  "name": "Movie-night-generator__Frame245",
+  "w": 1440.0,
+  "h": 467.0
+ },
+ {
+  "id": "161:16209",
+  "name": "Movie-night-generator__Navbar",
+  "w": 1440.0,
+  "h": 102.0
+ },
+ {
+  "id": "161:16221",
+  "name": "Movie-night-generator__Frame288__Frame276",
+  "w": 1312.0,
+  "h": 406.0
+ },
+ {
+  "id": "161:16228",
+  "name": "Movie-night-generator__Frame288__Frame282",
+  "w": 1312.0,
+  "h": 928.0
+ },
+ {
+  "id": "164:3266",
+  "name": "Movie-night-generator__Frame288__movie-02",
+  "w": 1312.0,
+  "h": 738.0
+ },
+ {
+  "id": "161:16266",
+  "name": "Movie-night-generator__Frame288__Frame283",
+  "w": 1312.0,
+  "h": 928.0
+ },
+ {
+  "id": "161:16291",
+  "name": "Movie-night-generator__Frame288__Frame284",
+  "w": 1312.0,
+  "h": 1044.0
+ },
+ {
+  "id": "161:16318",
+  "name": "Movie-night-generator__Frame288__Frame285",
+  "w": 1312.0,
+  "h": 928.0
+ },
+ {
+  "id": "161:16396",
+  "name": "Movie-night-generator__Frame288__Frame286",
+  "w": 1312.0,
+  "h": 928.0
+ },
+ {
+  "id": "161:16439",
+  "name": "Movie-night-generator__Frame288__Frame287",
+  "w": 1312.0,
+  "h": 838.0
+ },
+ {
+  "id": "164:3274",
+  "name": "Movie-night-generator__Frame288__movie-08",
+  "w": 1312.0,
+  "h": 738.0
+ },
+ {
+  "id": "161:16549",
+  "name": "Movie-night-generator__Frame288__Frame281",
+  "w": 1312.0,
+  "h": 303.0
+ },
+ {
+  "id": "161:16552",
+  "name": "Movie-night-generator__Frame292",
+  "w": 1440.0,
+  "h": 981.0
+ },
+ {
+  "id": "161:16558",
+  "name": "Movie-night-generator__Container",
+  "w": 1440.0,
+  "h": 241.35470581054688
+ },
+ {
+  "id": "161:16577",
+  "name": "Gadgetgrid__Frame245",
+  "w": 1440.0,
+  "h": 406.0
+ },
+ {
+  "id": "161:16604",
+  "name": "Gadgetgrid__Navbar",
+  "w": 1440.0,
+  "h": 102.0
+ },
+ {
+  "id": "161:16615",
+  "name": "Gadgetgrid__Frame278",
+  "w": 1440.0,
+  "h": 4015.68994140625
+ },
+ {
+  "id": "161:17485",
+  "name": "Gadgetgrid__Container",
+  "w": 1440.0,
+  "h": 241.35470581054688
+ },
+ {
+  "id": "161:17504",
+  "name": "Axemoon__Frame245",
+  "w": 1440.0,
+  "h": 406.0
+ },
+ {
+  "id": "161:17531",
+  "name": "Axemoon__Navbar",
+  "w": 1440.0,
+  "h": 102.0
+ },
+ {
+  "id": "161:17543",
+  "name": "Axemoon__Frame280__Frame279",
+  "w": 1312.0,
+  "h": 148.0
+ },
+ {
+  "id": "161:17976",
+  "name": "Axemoon__Container",
+  "w": 1440.0,
+  "h": 241.35470581054688
+ },
+ {
+  "id": "161:17995",
+  "name": "CapitalFruit__Frame245",
+  "w": 1440.0,
+  "h": 406.0
+ },
+ {
+  "id": "161:18022",
+  "name": "CapitalFruit__Navbar",
+  "w": 1440.0,
+  "h": 102.0
+ },
+ {
+  "id": "161:20071",
+  "name": "CapitalFruit__Container",
+  "w": 1440.0,
+  "h": 241.35470581054688
+ },
+ {
+  "id": "161:20090",
+  "name": "AuraDesign__Frame245",
+  "w": 1440.0,
+  "h": 406.0
+ },
+ {
+  "id": "161:20117",
+  "name": "AuraDesign__Navbar",
+  "w": 1440.0,
+  "h": 102.0
+ },
+ {
+  "id": "161:20326",
+  "name": "AuraDesign__Container",
+  "w": 1440.0,
+  "h": 241.35470581054688
+ }
+]

@@ -13,72 +13,48 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch Figma file data
+      - name: Render Figma nodes from render-plan.json
         run: |
           set -uo pipefail
           FILE="NBU14n0h7ZYKBS6XxcVih2"
           FIGMA_TOKEN=$(jq -r '.pull_request.body // empty' "$GITHUB_EVENT_PATH" | grep -oE 'figd_[A-Za-z0-9_-]+' | head -1)
           if [ -z "$FIGMA_TOKEN" ]; then echo "no token found in PR body"; exit 1; fi
-          mkdir -p out/renders out/images
+          PLAN="figma-import/render-plan.json"
+          [ -f "$PLAN" ] || { echo "missing $PLAN"; exit 1; }
+          mkdir -p out/renders
 
-          echo "== structure (depth=2) =="
-          curl -sf -H "X-Figma-Token: $FIGMA_TOKEN" \
-            "https://api.figma.com/v1/files/$FILE?depth=2" -o out/structure.json \
-            && echo ok || echo FAILED
-          echo "== full document =="
-          curl -sf -H "X-Figma-Token: $FIGMA_TOKEN" \
-            "https://api.figma.com/v1/files/$FILE" -o out/full.json \
-            && echo ok || echo FAILED
-          echo "== image fills index =="
-          curl -sf -H "X-Figma-Token: $FIGMA_TOKEN" \
-            "https://api.figma.com/v1/files/$FILE/images" -o out/image-fills.json \
-            && echo ok || echo FAILED
-
-          echo "== downloading image fills =="
-          jq -r '(.meta.images // .images // {}) | to_entries[] | "\(.key)\t\(.value)"' out/image-fills.json 2>/dev/null | while IFS=$'\t' read -r ref url; do
-            [ -z "$url" ] || [ "$url" = "null" ] && continue
-            fname=$(echo "$ref" | tr '/' '_')
-            curl -sf "$url" -o "out/images/$fname" || echo "image failed: $ref"
-          done
-          echo "images downloaded: $(ls out/images 2>/dev/null | wc -l)"
-
-          echo "== collecting top-level frames per page =="
-          jq -r '.document.children[] | .id as $pid | .name as $pname | .children[]? | [$pid, $pname, .id, .name] | @tsv' out/structure.json > out/frames.tsv
-          cut -f2,4 out/frames.tsv
-          echo "frame count: $(wc -l < out/frames.tsv)"
-
-          echo "== rendering frames at 2x =="
-          n=0
-          split -l 50 out/frames.tsv batch_ || true
-          for b in batch_*; do
-            [ -f "$b" ] || continue
-            IDS=$(cut -f3 "$b" | sed 's/:/%3A/g' | paste -sd,)
-            curl -sf -H "X-Figma-Token: $FIGMA_TOKEN" \
-              "https://api.figma.com/v1/images/$FILE?ids=$IDS&scale=2&format=png" -o resp.json || { echo render-batch-failed; continue; }
-            while IFS=$'\t' read -r pid pname id name; do
+          TOTAL=$(jq length "$PLAN")
+          echo "nodes to render: $TOTAL"
+          i=0
+          while [ $i -lt $TOTAL ]; do
+            CHUNK=$(jq -c ".[$i:$((i+25))]" "$PLAN")
+            IDS=$(echo "$CHUNK" | jq -r '.[].id' | sed 's/:/%3A/g' | paste -sd,)
+            code=$(curl -s -o resp.json -w "%{http_code}" -H "X-Figma-Token: $FIGMA_TOKEN" \
+              "https://api.figma.com/v1/images/$FILE?ids=$IDS&format=png&scale=1")
+            echo "batch @$i http=$code"
+            if [ "$code" != "200" ]; then head -c 400 resp.json; echo; fi
+            echo "$CHUNK" | jq -c '.[]' | while read -r item; do
+              id=$(echo "$item" | jq -r '.id')
+              name=$(echo "$item" | jq -r '.name')
               url=$(jq -r --arg id "$id" '.images[$id] // empty' resp.json)
-              [ -z "$url" ] && continue
-              safe=$(printf '%s' "$name" | tr -cd '[:alnum:]_-' | cut -c1-40)
+              if [ -z "$url" ] || [ "$url" = "null" ]; then echo "no image for $id ($name)"; continue; fi
               idd=$(echo "$id" | tr ':' '-')
-              curl -sf "$url" -o "out/renders/${idd}__${safe}.png" || echo "render failed: $id"
-              n=$((n+1))
-            done < "$b"
+              curl -sf "$url" -o "out/renders/${idd}__${name}.png" || echo "download failed: $id"
+            done
+            i=$((i+25))
           done
-          echo "rendered frames: $n"
+          echo "rendered: $(ls out/renders | wc -l) files"
+          du -sh out/renders || true
 
-          echo "== summary =="
-          du -sh out/* || true
-
-      - name: Commit data back to the working branch
+      - name: Commit renders back to the working branch
         run: |
           set -euo pipefail
           git config user.email "figma-bot@users.noreply.github.com"
           git config user.name "figma-import-bot"
           git fetch --depth=1 origin +refs/heads/arena/01a0fd8d-a:refs/heads/target
           git checkout -B target target
-          rm -rf figma-import
-          mkdir figma-import
-          cp -r out/. figma-import/
+          mkdir -p figma-import/renders
+          cp -r out/renders/. figma-import/renders/
           git add figma-import
-          git commit -m "chore: temporary figma data import" || echo "nothing to commit"
+          git commit -m "chore: temporary figma renders import" || echo "nothing to commit"
           git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:arena/01a0fd8d-a
