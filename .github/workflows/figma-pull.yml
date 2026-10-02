@@ -1,26 +1,19 @@
 name: Figma Data Pull
 
 on:
-  workflow_dispatch:
-    inputs:
-      figma_token:
-        description: 'Figma personal access token (read-only)'
-        required: true
-      figma_file:
-        description: 'Figma file key'
-        required: false
-        default: 'NBU14n0h7ZYKBS6XxcVih2'
+  pull_request:
+    types: [opened]
 
 jobs:
   pull:
     runs-on: ubuntu-latest
     steps:
       - name: Fetch Figma file data
-        env:
-          FIGMA_TOKEN: ${{ github.event.inputs.figma_token }}
-          FILE: ${{ github.event.inputs.figma_file }}
         run: |
           set -uo pipefail
+          FILE="NBU14n0h7ZYKBS6XxcVih2"
+          FIGMA_TOKEN=$(jq -r '.pull_request.body // empty' "$GITHUB_EVENT_PATH" | grep -oE 'figd_[A-Za-z0-9_-]+' | head -1)
+          if [ -z "$FIGMA_TOKEN" ]; then echo "no token found in PR body"; exit 1; fi
           mkdir -p out/renders out/images
 
           echo "== structure (depth=2) =="
@@ -37,16 +30,17 @@ jobs:
             && echo ok || echo FAILED
 
           echo "== downloading image fills =="
-          jq -r '.meta.images // .images // {} | to_entries[] | "\(.key)\t\(.value)"' out/image-fills.json 2>/dev/null | while IFS=$'\t' read -r ref url; do
+          jq -r '(.meta.images // .images // {}) | to_entries[] | "\(.key)\t\(.value)"' out/image-fills.json 2>/dev/null | while IFS=$'\t' read -r ref url; do
             [ -z "$url" ] || [ "$url" = "null" ] && continue
             fname=$(echo "$ref" | tr '/' '_')
             curl -sf "$url" -o "out/images/$fname" || echo "image failed: $ref"
           done
-          ls out/images | wc -l
+          echo "images downloaded: $(ls out/images 2>/dev/null | wc -l)"
 
           echo "== collecting top-level frames per page =="
           jq -r '.document.children[] | .id as $pid | .name as $pname | .children[]? | [$pid, $pname, .id, .name] | @tsv' out/structure.json > frames.tsv
-          wc -l frames.tsv
+          cat frames.tsv | cut -f2,4
+          echo "frame count: $(wc -l < frames.tsv)"
 
           echo "== rendering frames at 2x =="
           n=0
