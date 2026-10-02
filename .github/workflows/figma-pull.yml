@@ -32,10 +32,23 @@ jobs:
           while [ $i -lt $TOTAL ]; do
             CHUNK=$(jq -c ".[$i:$((i+25))]" "$PLAN")
             IDS=$(echo "$CHUNK" | jq -r '.[].id' | sed 's/:/%3A/g' | paste -sd,)
-            code=$(curl -s -o resp.json -w "%{http_code}" -H "X-Figma-Token: $FIGMA_TOKEN" \
-              "https://api.figma.com/v1/images/$FILE?ids=$IDS&format=png&scale=1")
+            attempt=0
+            code=000
+            while true; do
+              code=$(curl -s -o resp.json -w "%{http_code}" -H "X-Figma-Token: $FIGMA_TOKEN" \
+                "https://api.figma.com/v1/images/$FILE?ids=$IDS&format=png&scale=1")
+              if [ "$code" = "429" ] && [ $attempt -lt 10 ]; then
+                attempt=$((attempt+1))
+                wait=$((15*attempt))
+                echo "batch @$i rate limited, sleeping ${wait}s (attempt $attempt)"
+                sleep $wait
+                continue
+              fi
+              break
+            done
             echo "batch @$i http=$code ids=$(echo "$CHUNK" | jq length)"
             if [ "$code" != "200" ]; then echo "resp: $(head -c 400 resp.json)"; fi
+            if [ "$code" = "200" ]; then
             echo "$CHUNK" | jq -c '.[]' | while read -r item; do
               id=$(echo "$item" | jq -r '.id')
               name=$(echo "$item" | jq -r '.name')
@@ -44,6 +57,8 @@ jobs:
               idd=$(echo "$id" | tr ':' '-')
               curl -sf "$url" -o "out/renders/${idd}__${name}.png" || echo "download failed: $id"
             done
+            fi
+            sleep 4
             i=$((i+25))
           done
           echo "rendered files: $(ls out/renders 2>/dev/null | wc -l)"
