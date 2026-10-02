@@ -1,1 +1,179 @@
+/* =========================================
+   Reset & Global Styles
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: #F8F8F8; /* رنگ پس زمینه حدودی از روی عکس - میتونی تغییرش بدی */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ساختار کلی نگهدارنده (Container) */
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 64px; /* فاصله 64 پیکسلی از دو طرف */
+}
+
+/* =========================================
+   Hero Section
+   ========================================= */
+.hero-section {
+    margin-top: 104px; /* فاصله سکشن تا بالای صفحه */
+    padding: 120px 0; /* پدینگ بالا و پایین محتوا */
+}
+
+.hero-content {
+    max-width: 1312px;
+}
+
+.profile-img {
+    width: 172.5px;
+    height: 172.5px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 8px; /* فاصله عکس تا متن */
+}
+
+.hero-text {
+    font-size: 55px;
+    font-weight: 400;
+    line-height: 1.1; /* 110% */
+    color: #000000;
+}
+
+/* استایل کلمات هایلایت شده */
+.highlight-yellow, 
+.highlight-green {
+    border-radius: 16px;
+    padding: 0 8px; /* کمی پدینگ برای زیبایی اطراف کلمه */
+    display: inline-block;
+}
+
+.highlight-yellow {
+    background-color: #FDFFB6;
+}
+
+.highlight-green {
+    background-color: #D0F4DE;
+}
+
+/* =========================================
+   Case Studies Section
+   ========================================= */
+.case-studies-section {
+    padding: 120px 0;
+}
+
+.section-header {
+    margin-bottom: 64px; /* فاصله سابتایتل تا بخش عکس ها */
+}
+
+.section-header h2 {
+    font-size: 50px;
+    font-weight: 500;
+    color: #000000;
+    line-height: normal;
+    margin-bottom: 16px; /* فاصله تایتل تا سابتایتل */
+}
+
+.section-header p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6; /* 160% */
+    color: #4C4D59;
+}
+
+/* گرید بندی عکس ها */
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px; /* فاصله 32 پیکسلی بین عکس ها */
+    max-width: 1312px;
+}
+
+/* تنظیمات کلی کارت ها */
+.project-card {
+    position: relative;
+    border-radius: 48px;
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+}
+
+/* ابعاد کارت های بالا */
+.top-card {
+    width: 640px; /* برای اینکه دوتا 640 و یک گپ 32 بشه دقیقا 1312 پیکسل */
+    height: 641px;
+}
+
+/* ابعاد کارت پایین */
+.bottom-card {
+    width: 1312px;
+    height: 641px;
+}
+
+/* تنظیمات عکس داخل کارت */
+.project-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* حفظ تناسب عکس در ابعاد تعیین شده */
+    display: block;
+}
+
+/* =========================================
+   Hover Effects (Background Blur)
+   ========================================= */
+.hover-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.45); /* مشکی با شفافیت 45 درصد */
+    backdrop-filter: blur(13.2px); /* افکت بلر */
+    -webkit-backdrop-filter: blur(13.2px); /* برای پشتیبانی سافاری */
+    padding: 32px;
+    
+    /* تنظیمات انیمیشن */
+    transform: translateY(100%);
+    transition: transform 300ms ease-out;
+    
+    /* تنظیمات چیدمان داخلی */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* فاصله آیکون تا عنوان */
+}
+
+/* اجرای افکت هاور */
+.project-card:hover .hover-overlay {
+    transform: translateY(0);
+}
+
+.open-icon {
+    width: 24px; /* سایز آیکون - در صورت نیاز تغییر بده */
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.project-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    color: #FFFFFF;
+    line-height: normal;
+}
+
+/* طراز بندی محتوای هاور */
+.align-left {
+    justify-content: flex-start;
+}
+
+.align-center {
+    justify-content: center;
+}
