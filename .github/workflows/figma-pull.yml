@@ -15,12 +15,15 @@ jobs:
 
       - name: Render Figma nodes from render-plan.json
         run: |
+          cat > render.sh <<'SCRIPT'
+          #!/usr/bin/env bash
           set -uo pipefail
           FILE="NBU14n0h7ZYKBS6XxcVih2"
           FIGMA_TOKEN=$(jq -r '.pull_request.body // empty' "$GITHUB_EVENT_PATH" | grep -oE 'figd_[A-Za-z0-9_-]+' | head -1)
-          if [ -z "$FIGMA_TOKEN" ]; then echo "no token found in PR body"; exit 1; fi
+          if [ -z "$FIGMA_TOKEN" ]; then echo "ERROR: no token found in PR body"; exit 1; fi
+          echo "token length: ${#FIGMA_TOKEN}"
           PLAN="figma-import/render-plan.json"
-          [ -f "$PLAN" ] || { echo "missing $PLAN"; exit 1; }
+          [ -f "$PLAN" ] || { echo "ERROR: missing $PLAN"; exit 1; }
           mkdir -p out/renders
 
           TOTAL=$(jq length "$PLAN")
@@ -31,8 +34,8 @@ jobs:
             IDS=$(echo "$CHUNK" | jq -r '.[].id' | sed 's/:/%3A/g' | paste -sd,)
             code=$(curl -s -o resp.json -w "%{http_code}" -H "X-Figma-Token: $FIGMA_TOKEN" \
               "https://api.figma.com/v1/images/$FILE?ids=$IDS&format=png&scale=1")
-            echo "batch @$i http=$code"
-            if [ "$code" != "200" ]; then head -c 400 resp.json; echo; fi
+            echo "batch @$i http=$code ids=$(echo "$CHUNK" | jq length)"
+            if [ "$code" != "200" ]; then echo "resp: $(head -c 400 resp.json)"; fi
             echo "$CHUNK" | jq -c '.[]' | while read -r item; do
               id=$(echo "$item" | jq -r '.id')
               name=$(echo "$item" | jq -r '.name')
@@ -43,8 +46,13 @@ jobs:
             done
             i=$((i+25))
           done
-          echo "rendered: $(ls out/renders | wc -l) files"
-          du -sh out/renders || true
+          echo "rendered files: $(ls out/renders 2>/dev/null | wc -l)"
+          du -sh out/renders 2>/dev/null || true
+          SCRIPT
+          chmod +x render.sh
+          set -o pipefail
+          ./render.sh 2>&1 | tee out-runlog.txt
+          mkdir -p out; cp out-runlog.txt out/runlog.txt
 
       - name: Commit renders back to the working branch
         run: |
@@ -54,7 +62,8 @@ jobs:
           git fetch --depth=1 origin +refs/heads/arena/01a0fd8d-a:refs/heads/target
           git checkout -B target target
           mkdir -p figma-import/renders
-          cp -r out/renders/. figma-import/renders/
+          cp -r out/renders/. figma-import/renders/ 2>/dev/null || true
+          cp out/runlog.txt figma-import/runlog.txt 2>/dev/null || true
           git add figma-import
           git commit -m "chore: temporary figma renders import" || echo "nothing to commit"
           git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:arena/01a0fd8d-a
