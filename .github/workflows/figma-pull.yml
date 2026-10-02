@@ -15,20 +15,31 @@ jobs:
 
       - name: Fetch geometry if MODE=geometry
         run: |
+          cat > geometry.sh <<'GS'
+          #!/usr/bin/env bash
           set -uo pipefail
+          mkdir -p out/renders
           FILE="NBU14n0h7ZYKBS6XxcVih2"
-          FIGMA_TOKEN=$(jq -r '.pull_request.body // empty' "$GITHUB_EVENT_PATH" | grep -oE 'figd_[A-Za-z0-9_-]+' | head -1)
-          MODE=$(jq -r '.pull_request.body // empty' "$GITHUB_EVENT_PATH" | grep -oE 'MODE=[a-z]+' | head -1 | cut -d= -f2)
-          echo "mode: ${MODE:-render}"
-          if [ "$MODE" = "geometry" ]; then
+          BODY=$(jq -r '.pull_request.body // empty' "$GITHUB_EVENT_PATH")
+          echo "body-len: ${#BODY}"
+          FIGMA_TOKEN=$(echo "$BODY" | grep -oE 'figd_[A-Za-z0-9_-]+' | head -1 || true)
+          echo "token-len: ${#FIGMA_TOKEN}"
+          MODE=$(echo "$BODY" | grep -oE 'MODE=[a-z]+' | head -1 | cut -d= -f2 || true)
+          echo "mode: ${MODE:-none}"
+          if [ "$MODE" = "geometry" ] && [ -n "$FIGMA_TOKEN" ]; then
             echo "fetching full file with geometry=paths ..."
             code=$(curl -s -o out/full-geometry.json -w "%{http_code}" -H "X-Figma-Token: $FIGMA_TOKEN" \
               "https://api.figma.com/v1/files/$FILE?geometry=paths")
             echo "http=$code"
+            [ "$code" != "200" ] && head -c 300 out/full-geometry.json
             du -h out/full-geometry.json || true
-            mkdir -p out/renders  # keep commit step happy
-            echo "$MODE" > out/.mode
+            echo "$MODE" > out/.mode || true
           fi
+          echo "geometry-step-end"
+          GS
+          chmod +x geometry.sh
+          ./geometry.sh 2>&1 | tee out/geometry-log.txt
+          echo "exit=$?"
 
       - name: Render Figma nodes from render-plan.json
         if: ${{ !contains(github.event.pull_request.body, 'MODE=geometry') }}
@@ -88,6 +99,7 @@ jobs:
           mkdir -p out; cp out-runlog.txt out/runlog.txt
 
       - name: Commit renders back to the working branch
+        if: always()
         run: |
           set -euo pipefail
           git config user.email "figma-bot@users.noreply.github.com"
@@ -97,6 +109,9 @@ jobs:
           mkdir -p figma-import/renders
           cp -r out/renders/. figma-import/renders/ 2>/dev/null || true
           cp out/runlog.txt figma-import/runlog.txt 2>/dev/null || true
+          cp out/geometry-log.txt figma-import/geometry-log.txt 2>/dev/null || true
+          [ -f out/full-geometry.json ] && cp out/full-geometry.json figma-import/full-geometry.json
+          true
           git add figma-import
           git commit -m "chore: temporary figma renders import" || echo "nothing to commit"
           git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:arena/01a0fd8d-a
