@@ -1,0 +1,95 @@
+/* generated from Figma — pixel exact */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #ffffff; font-family: 'Manrope', sans-serif; }
+a.linkwrap { text-decoration: none; color: inherit; display: block; }
+a.linkwrap.ext { display: inline-block; }
+.icn { display: block; }
+.n161-14379 { position: absolute; left: 0.0px; top: 0.0px; width: 67.1px; height: 67.1px; --ar: 67/67; background-color: rgba(220, 235, 246, 1.0); border-radius: 50% }
+.n161-14383 { position: absolute; left: 0.0px; top: 0.0px; width: 38.3px; height: 38.3px; --ar: 38/38; line-height: 0 }
+.n161-14382 { position: absolute; left: 0.0px; top: 0.0px; width: 38.3px; height: 38.3px; --ar: 38/38 }
+.n161-14385 { position: absolute; left: 0.0px; top: 0.0px; width: 38.3px; height: 38.3px; --ar: 38/38; line-height: 0 }
+.n161-14384 { position: absolute; left: 0.0px; top: 0.0px; width: 38.3px; height: 38.3px; --ar: 38/38 }
+.n161-14381 { position: absolute; left: 0.0px; top: 0.0px; width: 38.3px; height: 38.3px; --ar: 38/38 }
+.n161-14380 { position: absolute; left: 14.4px; top: 14.4px; width: 38.3px; height: 38.3px; --ar: 38/38 }
+.n161-14378 { width: 67.1px; height: 67.1px; --ar: 67/67 }
+.n161-14387.txt.fs-55 { font-family: 'Manrope', sans-serif; font-weight: 400; font-size: 55.0px; line-height: 60.5px; color: rgba(0, 0, 0, 1.0); text-align: left; width: 1228.9px; white-space: pre-wrap }
+.n161-14390.txt.fs-15 { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 15.0px; line-height: 21.0px; color: rgba(76, 77, 89, 1.0); text-align: left; width: 32.0px; white-space: pre-wrap }
+.n161-14391.txt.fs-15 { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 15.0px; line-height: 21.0px; color: rgba(0, 0, 0, 1.0); text-align: left; width: 126.0px; white-space: pre-wrap }
+.n161-14389 { width: 166.0px; height: 21.0px; --ar: 166/21; display: flex; flex-direction: row; gap: 8.0px; align-items: center }
+.n161-14393.txt.fs-15 { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 15.0px; line-height: 21.0px; color: rgba(76, 77, 89, 1.0); text-align: left; width: 34.0px; white-space: pre-wrap }
+.n161-14394.txt.fs-15 { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 15.0px; line-height: 21.0px; color: rgba(0, 0, 0, 1.0); text-align: left; width: 118.0px; white-space: pre-wrap }
+.n161-14392 { width: 160.0px; height: 21.0px; --ar: 160/21; display: flex; flex-direction: row; gap: 8.0px; align-items: center }
+.n161-14396.txt.fs-15 { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 15.0px; line-height: 21.0px; color: rgba(76, 77, 89, 1.0); text-align: left; width: 60.0px; white-space: pre-wrap }
+.n161-14397.txt.fs-15 { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 15.0px; line-height: 21.0px; color: rgba(0, 0, 0, 1.0); text-align: left; width: 36.0px; white-space: pre-wrap }
+.n161-14395 { width: 104.0px; height: 21.0px; --ar: 104/21; display: flex; flex-direction: row; gap: 8.0px; align-items: center }
+.n161-14399.txt.fs-15 { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 15.0px; line-height: 21.0px; color: rgba(76, 77, 89, 1.0); text-align: left; width: 38.0px; white-space: pre-wrap }
+.n161-14400.txt.fs-15 { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 15.0px; line-height: 21.0px; color: rgba(0, 0, 0, 1.0); text-align: left; width: 132.0px; white-space: pre-wrap }
+.n161-14398 { width: 178.0px; height: 21.0px; --ar: 178/21; display: flex; flex-direction: row; gap: 8.0px; align-items: center }
+.n161-14402.txt.fs-15 { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 15.0px; line-height: 21.0px; color: rgba(76, 77, 89, 1.0); text-align: left; width: 45.0px; white-space: pre-wrap }
+.n161-14403.txt.fs-15 { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 15.0px; line-height: 21.0px; color: rgba(0, 0, 0, 1.0); text-align: left; width: 466.0px; white-space: pre-wrap }
+.n161-14401 { flex-grow: 1; width: 160.0px; height: 21.0px; --ar: 160/21; display: flex; flex-direction: row; gap: 8.0px; align-items: center }
+.n161-14388.W3 { width: 869.0px; height: 74.0px; --ar: 869/74; display: flex; flex-direction: column }
+.n161-14386.W1 { flex-grow: 1; width: 1228.9px; height: 165.0px; --ar: 1229/165; display: flex; flex-direction: column; gap: 30.0px }
+.n161-14377.sec.sec.W1 { position: absolute; left: 0.0px; top: 102.0px; width: 1440.0px; height: 406.0px; --ar: 1440/406; display: flex; flex-direction: row; gap: 16.0px; padding: 120.0px 64.0px 120.0px 64.0px; border: 1.0px solid rgba(76, 77, 89, 1.0) }
+.n161-14406.txt.fs-14 { font-family: 'Manrope', sans-serif; font-weight: 400; font-size: 14.0px; line-height: 22.4px; color: rgba(255, 255, 255, 1.0); text-align: left; width: 38.0px; white-space: pre-wrap }
+.n161-14408.txt.fs-14 { font-family: 'Manrope', sans-serif; font-weight: 400; font-size: 14.0px; line-height: 22.4px; color: rgba(255, 255, 255, 1.0); text-align: left; width: 55.0px; white-space: pre-wrap }
+.n161-14409 { width: 11.0px; height: 9.0px; --ar: 11/9 }
+.n161-14407 { width: 55.0px; height: 22.0px; --ar: 55/22; display: flex; flex-direction: row; gap: 8.0px; align-items: center }
+.n161-14411.txt.fs-14 { font-family: 'Manrope', sans-serif; font-weight: 400; font-size: 14.0px; line-height: 22.4px; color: rgba(255, 255, 255, 1.0); text-align: left; width: 63.0px; white-space: pre-wrap }
+.n161-14412.txt.fs-14 { font-family: 'Manrope', sans-serif; font-weight: 400; font-size: 14.0px; line-height: 22.4px; color: rgba(255, 255, 255, 1.0); text-align: left; width: 53.0px; white-space: pre-wrap }
+.n161-14414.txt.fs-14 { font-family: 'Manrope', sans-serif; font-weight: 400; font-size: 14.0px; line-height: 22.4px; color: rgba(0, 0, 0, 1.0); text-align: left; width: 51.0px; white-space: pre-wrap }
+.n161-14413 { width: 83.0px; height: 30.0px; --ar: 83/30; display: flex; flex-direction: row; gap: 8.0px; padding: 4.0px 16.0px 4.0px 16.0px; justify-content: center; align-items: center; background-color: rgba(255, 255, 255, 1.0); border-radius: 16.0px }
+.n161-14405.menu { width: 452.0px; height: 38.0px; --ar: 452/38; display: flex; flex-direction: row; gap: 32.0px; padding: 4.0px 16.0px 4.0px 16.0px; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 1.0); border-radius: 24.0px }
+.n161-14404.sec.sec.W1.nav { position: absolute; left: 0.0px; top: 0.0px; width: 1440.0px; height: 102.0px; --ar: 1440/102; display: flex; flex-direction: column; gap: 8.0px; padding: 32.0px 64.0px 32.0px 64.0px; justify-content: center; align-items: center }
+.n161-14418.txt.fs-50 { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 50.0px; line-height: 68.3px; color: rgba(0, 0, 0, 1.0); text-align: left; width: 1312.0px; white-space: pre-wrap }
+.n161-14419.txt.fs-48 { font-family: 'Vazirmatn', sans-serif; font-weight: 700; font-size: 48.0px; line-height: 77.8px; letter-spacing: -0.96px; color: rgba(0, 0, 0, 1.0); text-align: left; width: 1312.0px; white-space: pre-wrap }
+.n161-14417.W1 { width: 1312.0px; height: 303.0px; --ar: 1312/303; display: flex; flex-direction: column; gap: 32.0px }
+.n164-3063.W1.imgbox { width: 1312.0px; height: 738.0px; --ar: 1312/738; background-image: url('assets/img/windows-01.webp'); background-size: cover; background-position: center; background-repeat: no-repeat }
+.n161-14416.W1 { width: 1312.0px; height: 1073.0px; --ar: 1312/1073; display: flex; flex-direction: column; gap: 32.0px }
+.n161-14450.txt.fs-50 { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 50.0px; line-height: 68.3px; color: rgba(0, 0, 0, 1.0); text-align: left; width: 960.0px; white-space: pre-wrap }
+.n161-14451.txt.fs-18 { font-family: 'Manrope', sans-serif; font-weight: 400; font-size: 18.0px; line-height: 28.8px; color: rgba(0, 0, 0, 1.0); text-align: left; width: 960.0px; white-space: pre-wrap }
+.n161-14449.W2 { width: 960.0px; height: 129.0px; --ar: 960/129; display: flex; flex-direction: column; gap: 32.0px }
+.n164-3064.W1.imgbox { width: 1312.0px; height: 738.0px; --ar: 1312/738; background-image: url('assets/img/windows-02.webp'); background-size: cover; background-position: center; background-repeat: no-repeat }
+.n161-14448.W1 { width: 1312.0px; height: 899.0px; --ar: 1312/899; display: flex; flex-direction: column; gap: 32.0px }
+.n161-14534.txt.fs-50 { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 50.0px; line-height: 68.3px; color: rgba(0, 0, 0, 1.0); text-align: left; width: 979.0px; white-space: pre-wrap }
+.n161-14535.txt.fs-18 { font-family: 'Manrope', sans-serif; font-weight: 400; font-size: 18.0px; line-height: 28.8px; color: rgba(0, 0, 0, 1.0); text-align: left; width: 979.0px; white-space: pre-wrap }
+.n161-14533.W2 { width: 979.0px; height: 332.0px; --ar: 979/332; display: flex; flex-direction: column; gap: 32.0px }
+.n164-3065.W1.imgbox { width: 1312.0px; height: 738.0px; --ar: 1312/738; background-image: url('assets/img/windows-03.webp'); background-size: cover; background-position: center; background-repeat: no-repeat }
+.n161-14532.W1 { width: 1312.0px; height: 1102.0px; --ar: 1312/1102; display: flex; flex-direction: column; gap: 32.0px }
+.n161-14561.txt.fs-50 { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 50.0px; line-height: 68.3px; color: rgba(0, 0, 0, 1.0); text-align: left; width: 1275.7px; white-space: pre-wrap }
+.n164-3066.W1.imgbox { width: 1312.0px; height: 738.0px; --ar: 1312/738; background-image: url('assets/img/windows-04.webp'); background-size: cover; background-position: center; background-repeat: no-repeat }
+.n161-14560.W1 { width: 1312.0px; height: 906.0px; --ar: 1312/906; display: flex; flex-direction: column; gap: 32.0px }
+.n161-14636.txt.fs-50 { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 50.0px; line-height: 68.3px; color: rgba(0, 0, 0, 1.0); text-align: left; width: 928.0px; white-space: pre-wrap }
+.n161-14637.txt.fs-18 { font-family: 'Manrope', sans-serif; font-weight: 400; font-size: 18.0px; line-height: 28.8px; color: rgba(0, 0, 0, 1.0); text-align: left; width: 928.0px; white-space: pre-wrap }
+.n161-14635.W2 { width: 928.0px; height: 129.0px; --ar: 928/129; display: flex; flex-direction: column; gap: 32.0px }
+.n164-3067.W1.imgbox { width: 1312.0px; height: 738.0px; --ar: 1312/738; background-image: url('assets/img/windows-05.webp'); background-size: cover; background-position: center; background-repeat: no-repeat }
+.n161-14634.W1 { width: 1312.0px; height: 899.0px; --ar: 1312/899; display: flex; flex-direction: column; gap: 32.0px; justify-content: center }
+.n161-14773.txt.fs-50 { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 50.0px; line-height: 68.3px; color: rgba(0, 0, 0, 1.0); text-align: left; width: 1094.0px; white-space: pre-wrap }
+.n161-14774.txt.fs-18 { font-family: 'Manrope', sans-serif; font-weight: 400; font-size: 18.0px; line-height: 28.8px; color: rgba(0, 0, 0, 1.0); text-align: left; width: 1094.0px; white-space: pre-wrap }
+.n161-14772.W2 { width: 1094.0px; height: 216.0px; --ar: 1094/216; display: flex; flex-direction: column; gap: 32.0px }
+.n164-3068.W1.imgbox { width: 1312.0px; height: 738.0px; --ar: 1312/738; background-image: url('assets/img/windows-06.webp'); background-size: cover; background-position: center; background-repeat: no-repeat }
+.n164-3069.W1.imgbox { width: 1312.0px; height: 738.0px; --ar: 1312/738; background-image: url('assets/img/windows-066.webp'); background-size: cover; background-position: center; background-repeat: no-repeat }
+.n164-3070.W1.imgbox { width: 1312.0px; height: 738.0px; --ar: 1312/738; background-image: url('assets/img/windows-0666.webp'); background-size: cover; background-position: center; background-repeat: no-repeat }
+.n164-3071.W1.imgbox { width: 1312.0px; height: 738.0px; --ar: 1312/738; background-image: url('assets/img/windows-06666.webp'); background-size: cover; background-position: center; background-repeat: no-repeat }
+.n161-14771.W1 { width: 1312.0px; height: 3296.0px; --ar: 1312/3296; display: flex; flex-direction: column; gap: 32.0px }
+.n161-15409.txt.fs-50 { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 50.0px; line-height: 68.3px; color: rgba(0, 0, 0, 1.0); text-align: left; width: 1094.0px; white-space: pre-wrap }
+.n161-15410.txt.fs-18 { font-family: 'Manrope', sans-serif; font-weight: 400; font-size: 18.0px; line-height: 28.8px; color: rgba(0, 0, 0, 1.0); text-align: left; width: 1094.0px; white-space: pre-wrap }
+.n161-15408.W2 { width: 1094.0px; height: 303.0px; --ar: 1094/303; display: flex; flex-direction: column; gap: 32.0px }
+.n161-14415.sec.sec.W1 { position: absolute; left: 0.0px; top: 508.0px; width: 1440.0px; height: 9198.0px; --ar: 1440/9198; display: flex; flex-direction: column; gap: 80.0px; padding: 120.0px 64.0px 120.0px 64.0px; align-items: center }
+.n161-15412.txt.fs-50 { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 50.0px; line-height: 68.3px; color: rgba(0, 0, 0, 1.0); text-align: left; width: 1312.0px; white-space: pre-wrap }
+.n164-8012.W3.imgbox.card { width: 640.0px; height: 641.0px; --ar: 640/641; background-image: url('assets/img/Torob-PLP-Redesign.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 48.0px }
+.n164-8013.W3.imgbox.card { width: 640.0px; height: 641.0px; --ar: 640/641; background-image: url('assets/img/Movie-night-generator.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 48.0px }
+.n161-15413.W1.grid2 { width: 1312.0px; height: 641.0px; --ar: 1312/641; display: flex; flex-direction: row; gap: 32.0px; align-items: center }
+.n161-15411.sec.sec.W1 { position: absolute; left: 0.0px; top: 9706.5px; width: 1440.0px; height: 981.0px; --ar: 1440/981; display: flex; flex-direction: column; gap: 32.0px; padding: 120.0px 64.0px 120.0px 64.0px; justify-content: center }
+.n161-15418 { width: 39.4px; height: 39.4px; --ar: 39/39; display: flex; flex-direction: row; gap: 7.1px; padding: 9.7px 12.4px 9.7px 12.4px; background-color: rgba(255, 255, 255, 1.0); border-radius: 19.7px }
+.n161-15420 { width: 39.4px; height: 39.4px; --ar: 39/39; display: flex; flex-direction: column; gap: 7.1px; padding: 11.5px 8.8px 11.5px 8.8px; background-color: rgba(255, 255, 255, 1.0); border-radius: 19.7px }
+.n161-15422 { width: 39.4px; height: 39.4px; --ar: 39/39; display: flex; flex-direction: column; gap: 7.1px; padding: 9.7px 9.7px 9.7px 9.7px; background-color: rgba(255, 255, 255, 1.0); border-radius: 19.7px }
+.n161-15424 { width: 39.4px; height: 39.4px; --ar: 39/39; display: flex; flex-direction: row; gap: 7.1px; padding: 8.8px 8.8px 8.8px 8.8px; background-color: rgba(255, 255, 255, 1.0); border-radius: 19.7px }
+.n161-15427 { width: 39.4px; height: 39.4px; --ar: 39/39; display: flex; flex-direction: column; gap: 7.1px; padding: 9.7px 9.7px 9.7px 9.7px; background-color: rgba(255, 255, 255, 1.0); border-radius: 19.7px }
+.n161-15429 { width: 39.4px; height: 39.4px; --ar: 39/39; display: flex; flex-direction: column; gap: 7.1px; justify-content: center; align-items: center; background-color: rgba(255, 255, 255, 1.0); border-radius: 19.7px }
+.n161-15417 { width: 371.8px; height: 39.4px; --ar: 372/39; display: flex; flex-direction: row; gap: 27.1px; align-items: center }
+.n161-15432.txt.fs-15 { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 15.0px; line-height: 21.0px; color: rgba(42, 42, 40, 1.0); text-align: center; width: 309.0px; white-space: pre-wrap }
+.n161-15433.txt.fs-15 { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 15.0px; line-height: 21.0px; color: rgba(42, 42, 40, 1.0); text-align: center; width: 186.0px; white-space: pre-wrap }
+.n161-15431 { width: 309.0px; height: 58.0px; --ar: 309/58; display: flex; flex-direction: column; gap: 16.0px; align-items: center }
+.n161-15416.sec.sec.W1 { position: absolute; left: 0.0px; top: 10717.6px; width: 1440.0px; height: 241.4px; --ar: 1440/241; display: flex; flex-direction: column; gap: 64.0px; padding: 64.0px 8.0px 16.0px 8.0px; justify-content: center; align-items: center; background-color: rgba(240, 240, 240, 1.0); border-radius: 48.0px 48.0px 0.0px 0.0px }
+.n161-14376.page.W1 { position: relative; width: 1440.0px; height: 10959.0px; margin: 0 auto; width: 1440.0px; height: 10959.0px; --ar: 1440/10959; background-color: rgba(255, 255, 255, 1.0) }
