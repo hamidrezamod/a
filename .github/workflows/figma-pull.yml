@@ -2,12 +2,17 @@ name: Figma Data Pull
 
 on:
   pull_request:
-    types: [opened]
+    types: [opened, synchronize]
+
+permissions:
+  contents: write
 
 jobs:
   pull:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+
       - name: Fetch Figma file data
         run: |
           set -uo pipefail
@@ -38,13 +43,13 @@ jobs:
           echo "images downloaded: $(ls out/images 2>/dev/null | wc -l)"
 
           echo "== collecting top-level frames per page =="
-          jq -r '.document.children[] | .id as $pid | .name as $pname | .children[]? | [$pid, $pname, .id, .name] | @tsv' out/structure.json > frames.tsv
-          cat frames.tsv | cut -f2,4
-          echo "frame count: $(wc -l < frames.tsv)"
+          jq -r '.document.children[] | .id as $pid | .name as $pname | .children[]? | [$pid, $pname, .id, .name] | @tsv' out/structure.json > out/frames.tsv
+          cut -f2,4 out/frames.tsv
+          echo "frame count: $(wc -l < out/frames.tsv)"
 
           echo "== rendering frames at 2x =="
           n=0
-          split -l 50 frames.tsv batch_ || true
+          split -l 50 out/frames.tsv batch_ || true
           for b in batch_*; do
             [ -f "$b" ] || continue
             IDS=$(cut -f3 "$b" | sed 's/:/%3A/g' | paste -sd,)
@@ -64,9 +69,16 @@ jobs:
           echo "== summary =="
           du -sh out/* || true
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: figma-data
-          path: out/
-          retention-days: 7
+      - name: Commit data back to the working branch
+        run: |
+          set -euo pipefail
+          git config user.email "figma-bot@users.noreply.github.com"
+          git config user.name "figma-import-bot"
+          git fetch --depth=1 origin +refs/heads/arena/01a0fd8d-a:refs/heads/target
+          git checkout -B target target
+          rm -rf figma-import
+          mkdir figma-import
+          cp -r out/. figma-import/
+          git add figma-import
+          git commit -m "chore: temporary figma data import" || echo "nothing to commit"
+          git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:arena/01a0fd8d-a
