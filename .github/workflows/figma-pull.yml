@@ -1,0 +1,78 @@
+name: Figma Data Pull
+
+on:
+  workflow_dispatch:
+    inputs:
+      figma_token:
+        description: 'Figma personal access token (read-only)'
+        required: true
+      figma_file:
+        description: 'Figma file key'
+        required: false
+        default: 'NBU14n0h7ZYKBS6XxcVih2'
+
+jobs:
+  pull:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch Figma file data
+        env:
+          FIGMA_TOKEN: ${{ github.event.inputs.figma_token }}
+          FILE: ${{ github.event.inputs.figma_file }}
+        run: |
+          set -uo pipefail
+          mkdir -p out/renders out/images
+
+          echo "== structure (depth=2) =="
+          curl -sf -H "X-Figma-Token: $FIGMA_TOKEN" \
+            "https://api.figma.com/v1/files/$FILE?depth=2" -o out/structure.json \
+            && echo ok || echo FAILED
+          echo "== full document =="
+          curl -sf -H "X-Figma-Token: $FIGMA_TOKEN" \
+            "https://api.figma.com/v1/files/$FILE" -o out/full.json \
+            && echo ok || echo FAILED
+          echo "== image fills index =="
+          curl -sf -H "X-Figma-Token: $FIGMA_TOKEN" \
+            "https://api.figma.com/v1/files/$FILE/images" -o out/image-fills.json \
+            && echo ok || echo FAILED
+
+          echo "== downloading image fills =="
+          jq -r '.meta.images // .images // {} | to_entries[] | "\(.key)\t\(.value)"' out/image-fills.json 2>/dev/null | while IFS=$'\t' read -r ref url; do
+            [ -z "$url" ] || [ "$url" = "null" ] && continue
+            fname=$(echo "$ref" | tr '/' '_')
+            curl -sf "$url" -o "out/images/$fname" || echo "image failed: $ref"
+          done
+          ls out/images | wc -l
+
+          echo "== collecting top-level frames per page =="
+          jq -r '.document.children[] | .id as $pid | .name as $pname | .children[]? | [$pid, $pname, .id, .name] | @tsv' out/structure.json > frames.tsv
+          wc -l frames.tsv
+
+          echo "== rendering frames at 2x =="
+          n=0
+          split -l 50 frames.tsv batch_ || true
+          for b in batch_*; do
+            [ -f "$b" ] || continue
+            IDS=$(cut -f3 "$b" | sed 's/:/%3A/g' | paste -sd,)
+            curl -sf -H "X-Figma-Token: $FIGMA_TOKEN" \
+              "https://api.figma.com/v1/images/$FILE?ids=$IDS&scale=2&format=png" -o resp.json || { echo render-batch-failed; continue; }
+            while IFS=$'\t' read -r pid pname id name; do
+              url=$(jq -r --arg id "$id" '.images[$id] // empty' resp.json)
+              [ -z "$url" ] && continue
+              safe=$(printf '%s' "$name" | tr -cd '[:alnum:]_-' | cut -c1-40)
+              idd=$(echo "$id" | tr ':' '-')
+              curl -sf "$url" -o "out/renders/${idd}__${safe}.png" || echo "render failed: $id"
+              n=$((n+1))
+            done < "$b"
+          done
+          echo "rendered frames: $n"
+
+          echo "== summary =="
+          du -sh out/* || true
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: figma-data
+          path: out/
+          retention-days: 7
